@@ -1113,20 +1113,17 @@ void Jugador::comprobarCelda(){
 }
 
 void Jugador::resetearJugador(){
+    
     tieneLLave = false;
     golpeado = false;
     estadoDelPacto = 0;
     dialogo = false;
     carcelAbierta = false;
-    
     vidasMiniaturas1=10;
-   vidasMiniaturas2=10;
-
-
-vidas=10;
-   vidasPrincipales=3;
-    
-    std::cout<<"Jugador reseteado, vidas: "<<vidas<<" , "<<vidasPrincipales<<std::endl;
+    vidasMiniaturas2=10;
+    vidas=10;
+    vidasPrincipales=3;
+//    posicionJugador = sf::Vector2f(0,0);
     
     
 }

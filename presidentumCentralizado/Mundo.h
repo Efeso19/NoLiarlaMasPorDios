@@ -112,6 +112,8 @@ public:
     int secundario1 = 0;
     int secundario2 = 0;
     
+    bool win;
+    bool gameover;
     bool resetSeq;
     
 private:

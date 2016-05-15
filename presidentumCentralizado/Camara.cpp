@@ -768,6 +768,9 @@ void Camara::resetearCamara(){
 }
 
 void Camara::cartelFinal(){
+    
+    Mundo::Instance()->win = true;
+    
     if(lastTime==0)
         setLastTime(countdown);
     // Texto
@@ -815,7 +818,7 @@ void Camara::cartelFinal(){
     }
     lines+="\nTIEMPO: ";
     lines+=to_string(lastTime);
-    lines+="\nPresiona la 'X' para continuar";
+    lines+="\nPresiona 'Intro' para continuar";
 
     sf::Text cuerpoText(lines, font, 30);
     //cuerpoText.setPosition(cartel.getOrigin().x-100,cartel.getOrigin().y-70);
@@ -832,6 +835,9 @@ void Camara::cartelFinal(){
 }
 
 void Camara::cartelGameOver(){
+    
+    Mundo::Instance()->gameover = true;
+    
     if(lastTime == 0)
         setLastTime(countdown);
     // Texto
