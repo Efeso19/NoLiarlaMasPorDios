@@ -134,6 +134,12 @@ private:
     
     sf::Texture texturaBackground;
     
+    sf::Texture* texturaLogoEquipo;
+    sf::Sprite* LogoEquipo;
+    sf::Texture* texturaEquipo;
+    sf::Sprite* imagenEquipo;
+    
+    
     sf::RectangleShape *FondomenuInPausa;
     sf::RectangleShape *barrasonido;
     sf::RectangleShape *barramusica;
@@ -141,6 +147,7 @@ private:
     sf::RectangleShape *tiradormusica;
     sf::RectangleShape *fondo;
     sf::Color *transparente;
+    
     
     sf::String interrogacion;
     sf::Text *desea;
@@ -154,7 +161,9 @@ private:
     sf::Text *personaje1; 
     sf::Text *personaje2;
     sf::Text *personaje3;
+    sf::String* stringRestoCreditos;
     sf::Text *textocreditos;
+    sf::Text *textocreditosVolver;
     sf::Text *textoCargarPartida;
     sf::Text *valorsonido;
     sf::Text *valormusica;

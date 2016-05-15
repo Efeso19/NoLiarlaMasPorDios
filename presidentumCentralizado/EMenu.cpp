@@ -237,10 +237,7 @@ EMenu::EMenu(Juego* context){ //CONSTRUCTOR REAL
     personaje3->setPosition(width*0.2, 400);
     personaje3->setCharacterSize(50);
     
-    //para creditos
-    textocreditos = new sf::Text("Aqui apareceran los creditos", fuente);
-    textocreditos->setPosition(width*0.3, height/2);
-    textocreditos->setCharacterSize(50);
+    
     
     //para cargar
     textoCargarPartida = new sf::Text("Aqui vendria la partida cargada", fuente); //aqui irian las lineas del layout de cargar partida
@@ -276,6 +273,24 @@ EMenu::EMenu(Juego* context){ //CONSTRUCTOR REAL
     tituloSel = new sf::Text(*stringSel, *font, 30);
     tituloSel->setCharacterSize(70);
     
+    //para creditos
+    stringRestoCreditos = new sf::String(L"Carlos Aniorte Llanes\nAlfonso José Rodríguez Gómez\nIsmael Perruca Jaén\nDaniela Posas Padilla\nAitor Vidal Arnau");
+
+    textocreditos = new sf::Text(*stringRestoCreditos, *font, 30);
+    textocreditos->setPosition(_context->window->getSize().x/2+60, _context->window->getSize().y/2-230);
+    textocreditos->setCharacterSize(50);
+    
+    textocreditosVolver = new sf::Text("Pulsa ESC para volver", *font, 30);
+    textocreditosVolver->setPosition(_context->window->getSize().x/2-350, _context->window->getSize().y/2+230);
+    textocreditosVolver->setColor(sf::Color::Red);
+    textocreditosVolver->setCharacterSize(40);
+    
+    //    Carlos Aniorte Llanes
+//    Alfonso José Rodríguez Gómez
+//    Ismael Perruca Jaén
+//    Daniela Posas Padilla
+//    Aitor Vidal Arnau
+    
     bgColor = new sf::Color;
     
     bgMenuTex = new sf::Texture;
@@ -285,6 +300,7 @@ EMenu::EMenu(Juego* context){ //CONSTRUCTOR REAL
     ppSelTex = new sf::Texture;
     ciudadanosSelTex = new sf::Texture;
     podemosSelTex = new sf::Texture;
+    
     
     
     if (!psoeSelTex->loadFromFile("resources/selection/psoe.png"))
@@ -353,6 +369,27 @@ EMenu::EMenu(Juego* context){ //CONSTRUCTOR REAL
         case 4: bgColor->r = 188; bgColor->g = 0; bgColor->b = 205; break;
         
     }
+    
+    
+    texturaLogoEquipo = new sf::Texture;
+    texturaEquipo = new sf::Texture;
+    
+    if (!texturaLogoEquipo->loadFromFile("resources/mainmenu/logo.png"))
+        std::cerr << "Error cargando la imagen logo.png";
+    if (!texturaEquipo->loadFromFile("resources/mainmenu/equipo.jpg"))
+        std::cerr << "Error cargando la imagen equipo.jpg";
+    
+    LogoEquipo = new sf::Sprite (*texturaLogoEquipo);
+    imagenEquipo = new sf::Sprite (*texturaEquipo);
+    
+    LogoEquipo->setOrigin(LogoEquipo->getTexture()->getSize().x/2,LogoEquipo->getTexture()->getSize().y/2);
+    imagenEquipo->setOrigin(imagenEquipo->getTexture()->getSize().x/2,imagenEquipo->getTexture()->getSize().y/2);
+    
+    LogoEquipo->setPosition(_context->window->getSize().x/2+220, _context->window->getSize().y/2+150);
+    imagenEquipo->setPosition(_context->window->getSize().x/2-250, _context->window->getSize().y/2-100);
+    
+    imagenEquipo->setScale(0.8,0.8);
+    LogoEquipo->setScale(0.25,0.25);
 
 }
 
@@ -1073,7 +1110,13 @@ void EMenu::opciones(sf::RenderWindow& window){
 void EMenu::creditos(sf::RenderWindow& window){
    
     //mostramos los creditos
+    window.clear(*bgColor);
+    window.draw(*bgMenu);
     window.draw(*textocreditos);    
+    window.draw(*imagenEquipo); 
+    window.draw(*LogoEquipo); 
+    window.draw(*textocreditosVolver); 
+    
     
 }
 
