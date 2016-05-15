@@ -87,6 +87,7 @@ public:
     //VARIABLES DE PROGRESION DE JUEGO
     
     int lugaresVisitados[4]; //niveles a descartar
+
     
     int faseActual=0;
     

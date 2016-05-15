@@ -61,10 +61,11 @@ bool Mundo::crearMundo(int l){
    if(faseActual==0 || faseActual>3) //MIRAR Mundo.h
         faseActual=1;
    
+    /*
     lugaresVisitados[1] = -1;
     lugaresVisitados[2] = -1;
     lugaresVisitados[3] = -1;
-            
+    */
         
     
     std::cout<<"Has seleccionado al jugador de: ";
@@ -73,18 +74,24 @@ bool Mundo::crearMundo(int l){
     else if(nivel==3)std::cout<<"PP"<<std::endl;
     else if(nivel==4)std::cout<<"PSOE"<<std::endl;
     
-    switch(l){ //TRANSFORMADOR DE NUMERO DE JUGADOR A NUMERO DE NIVEL
-        
-        case 1: lugaresVisitados[0] = 4;break; // La primera posicion del array será la sede del propio partido break;
-        case 2: lugaresVisitados[0] = 3;break; // La primera posicion del array será la sede del propio partido
-        case 3: lugaresVisitados[0] = 1;break; // La primera posicion del array será la sede del propio partido
-        case 4: lugaresVisitados[0] = 2;break; // La primera posicion del array será la sede del propio partido
+    if(faseActual == 1){
+        switch(l){ //TRANSFORMADOR DE NUMERO DE JUGADOR A NUMERO DE NIVEL
+
+            case 1: lugaresVisitados[0] = 4;break; // La primera posicion del array será la sede del propio partido break;
+            case 2: lugaresVisitados[0] = 3;break; // La primera posicion del array será la sede del propio partido
+            case 3: lugaresVisitados[0] = 1;break; // La primera posicion del array será la sede del propio partido
+            case 4: lugaresVisitados[0] = 2;break; // La primera posicion del array será la sede del propio partido
+        }
     }
 
     
     //lugaresVisitados[0] = l;
     std::cout<<"lugaresVisitados[0]: "<< lugaresVisitados[0]<<std::endl;
     
+    for(int i=0; i< 4; i++){
+        std::cout<<"valor "<<lugaresVisitados[i]<<std::endl;
+    }
+
     int random;
     //int min = 1;
     //int max = 4;
@@ -288,7 +295,7 @@ void Mundo::Update(){
         jefefinal->handle();
     }
     
-    
+     
     //COLISIONES DE LOS PROYECTILES
     
     //compruebo que los proyectiles del jugador se destruyen ya sea por que recorren una distancia determinadad
@@ -359,11 +366,10 @@ void Mundo::Update(){
             camara->sumaVotos(1);
             soundSobre->play();
         }
-
+      
 }
 
 void Mundo::Render(){
-    
     
     
         mapa->dibuja();
@@ -374,11 +380,16 @@ void Mundo::Render(){
       
         mapa->dibujaVotos();
         
-        mapa->dibujaAyuda1();
-        mapa->dibujaAyuda2();
-        mapa->dibujaAyuda3();
-        mapa->dibujaAyuda4();
-        
+        if(faseActual == 1){
+            mapa->dibujaAyuda1();
+            std::cout<<"joder"<<std::endl;
+            mapa->dibujaAyuda2();
+            std::cout<<"joder2"<<std::endl;
+            mapa->dibujaAyuda3();
+            std::cout<<"joder3"<<std::endl;
+            mapa->dibujaAyuda4();
+        }
+        std::cout<<"joder4"<<std::endl;
         //dibujo los dos vectores de los enemigos
         for(int i=0; i<enemigosCuerpo->size(); i++){
             enemigosCuerpo->at(i)->draw();
