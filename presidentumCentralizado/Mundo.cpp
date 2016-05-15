@@ -376,7 +376,8 @@ void Mundo::Render(){
       //Jugador::Instance()->proyectiles->
       
         mapa->dibujaPlataformas();
-      
+        mapa->reconstruirPlataformas();
+        
         mapa->dibujaVotos();
         
         if(faseActual == 1){

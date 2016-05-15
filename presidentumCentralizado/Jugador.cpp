@@ -514,15 +514,22 @@ void Jugador::handle(){
 
         for(k=0; k<Mundo::Instance()->mapa->arrayPlataformas.size(); k++){
             if(this->getSprite().getGlobalBounds().intersects(Mundo::Instance()->mapa->arrayPlataformas[k]->spritePlat.getGlobalBounds())){  
-                if(this->getSprite().getPosition().y<Mundo::Instance()->mapa->arrayPlataformas[k]->spritePlat.getPosition().y){
+                if(this->getSprite().getPosition().y<Mundo::Instance()->mapa->arrayPlataformas[k]->spritePlat.getPosition().y
+                        && Mundo::Instance()->mapa->arrayPlataformas[k]->rota==false){
                     alturaSuelo=Mundo::Instance()->mapa->arrayPlataformas[k]->spritePlat.getPosition().y-90;
                     enelsuelo=true;
-                    if(Mundo::Instance()->mapa->arrayPlataformas[k]->direccion==1){
-                        posicionJugador.x+=0.9;
-                    }else{
-                        posicionJugador.x-=0.9;
+                    if(Mundo::Instance()->mapa->arrayPlataformas[k]->tipo==0){
+                        if(Mundo::Instance()->mapa->arrayPlataformas[k]->direccion==1){
+                            posicionJugador.x+=0.9;
+                        }else{
+                            posicionJugador.x-=0.9;
+                        }
                     }
 
+                    if(Mundo::Instance()->mapa->arrayPlataformas[k]->tipo==2){
+                        //Jugador sobre una plataforma rompible
+                        Mundo::Instance()->mapa->arrayPlataformas[k]->romperPlataforma();
+                    }
 
                     choquePlat=0;
                 }
