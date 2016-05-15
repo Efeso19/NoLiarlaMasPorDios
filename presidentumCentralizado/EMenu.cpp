@@ -749,6 +749,7 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                                 mostrarMenuppal=true;
                                 opcionMenuppal=6;
                                 selectedItemIndexInPausa=0;
+                                Mundo::Instance()->faseActual=0;
                                 EInGame::Instance(Juego::Instance())->eliminarMundo();
                                 //setteamos el menu para que los colores se muestren correctamente
                                 int i=0;
