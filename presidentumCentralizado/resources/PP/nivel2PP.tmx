@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="242" height="19" tilewidth="32" tileheight="32" nextobjectid="410">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="242" height="19" tilewidth="32" tileheight="32" nextobjectid="411">
  <tileset firstgid="1" name="nivelC'Sv1" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="nivelPPv1.png" width="256" height="256"/>
   <tile id="0">
@@ -14072,5 +14072,8 @@
  </objectgroup>
  <objectgroup color="#ff0000" name="DialogoPacto">
   <object id="409" x="7238.67" y="89.3333" width="18.6667" height="13.3333"/>
+ </objectgroup>
+ <objectgroup name="aprendeCambiar">
+  <object id="410" x="74" y="194"/>
  </objectgroup>
 </map>

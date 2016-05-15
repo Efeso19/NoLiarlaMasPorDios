@@ -385,6 +385,10 @@ void Mundo::Render(){
             mapa->dibujaAyuda3();
             mapa->dibujaAyuda4();
         }
+        
+        if(faseActual == 2){
+            mapa->dibujaAyuda5();
+        }
         //dibujo los dos vectores de los enemigos
         for(int i=0; i<enemigosCuerpo->size(); i++){
             enemigosCuerpo->at(i)->draw();

@@ -879,6 +879,39 @@ void Mapa::leerMapa(int numMapa){
                 }
              ayuda4 = ayuda4->NextSiblingElement("objectgroup");
          }
+          
+            TiXmlElement *ayuda5 = map->FirstChildElement("objectgroup");
+        while(ayuda5){
+            
+            nombre=(string) ayuda5->Attribute("name");
+           
+            if(nombre=="aprendeCambiar"){
+                    cout<<"nombre: "<<nombre<<endl;
+                    TiXmlElement *object = ayuda5->FirstChildElement("object");
+                    while(object){
+                        xString = (string) object->Attribute("x");
+                        yString = (string) object->Attribute("y");
+                        
+                        x=atoi(xString.c_str());
+                        y=atoi(yString.c_str());
+                        
+                        
+                        texAyuda5 = new sf::Texture();
+                        if (!texAyuda5->loadFromFile("resources/aprendeCambiar.png")) {
+                                std::cerr << "Error cargando la imagen aprendeSaltar.png";
+                                exit(0);
+                        }
+                        
+                        spriteAyuda5 = new sf::Sprite(*texAyuda5); 
+                        spriteAyuda5->setPosition(x, y);
+
+                        
+                        object = object->NextSiblingElement("object");
+                        filas++;
+                    }
+                }
+             ayuda5 = ayuda5->NextSiblingElement("objectgroup");
+         }
 //     TiXmlElement *properties = colisiones->FirstChildElement("properties");
 //     string atributo;
 //     while(properties){
@@ -1216,6 +1249,10 @@ void Mapa::dibujaAyuda3(){
 
 void Mapa::dibujaAyuda4(){
     Juego::Instance()->window->draw(*spriteAyuda4);
+}
+
+void Mapa::dibujaAyuda5(){
+    Juego::Instance()->window->draw(*spriteAyuda5);
 }
 
 void Mapa::dibujaEnemigosC(){
