@@ -9259,7 +9259,7 @@
   <object id="312" x="3136" y="62.6667" width="64" height="96"/>
   <object id="320" x="5630" y="318" width="62.6667" height="97.3333"/>
   <object id="321" x="382" y="318" width="62.6667" height="97.3333"/>
-  <object id="322" x="6687.33" y="124.667" width="62.6667" height="97.3333"/>
+  <object id="322" x="6687.33" y="127.667" width="62.6667" height="97.3333"/>
  </objectgroup>
  <objectgroup color="#00007f" name="Enemigos A">
   <object id="187" x="671" y="321" width="66" height="98"/>
@@ -13942,11 +13942,6 @@
   <object id="305" x="5321.33" y="481.333" width="52" height="28"/>
   <object id="308" x="5352" y="443.333" width="20.6667" height="28"/>
   <object id="323" x="2853.33" y="546.667" width="81.3333" height="56"/>
-  <object id="324" x="3010.67" y="545.333" width="84" height="56"/>
-  <object id="325" x="3178.67" y="546.667" width="74.6667" height="53.3333"/>
-  <object id="326" x="3337.33" y="546.667" width="74.6667" height="60"/>
-  <object id="328" x="3514.67" y="547.333" width="74.6667" height="60"/>
-  <object id="331" x="5854.67" y="481.333" width="669.333" height="101.333"/>
   <object id="398" x="1.66667" y="576.667" width="226.667" height="29.3333"/>
   <object id="402" x="199.333" y="449" width="116" height="26.6667"/>
  </objectgroup>
