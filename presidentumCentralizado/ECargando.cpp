@@ -45,16 +45,24 @@ void ECargando::Handle(){
 
 void ECargando::Init(){
   
+    
 
     // Texto
     font = new sf::Font;
     font->loadFromFile("fonts/alterebro-pixel-font.ttf");
-  
+    sf::String stringPoliticos(L"políticos");
+    sf::String stringPodras(L"podrás");
+    
     std::string lines = std::string("Preparando las cortes...");
     lines+="\nPreparando diputados... ";
     lines+="\nPreparando simpatizantes... ";
     lines+="\nPreparando votos... ";
     lines+="\nPreparando jefes... ";
+    lines+="\nSi pactas con otros ";
+    lines+=stringPoliticos;
+    lines+="\n";
+    lines+=stringPodras;
+    lines+=" usarlos mientras juegas";
     
     
     bgCartel = new sf::RectangleShape;

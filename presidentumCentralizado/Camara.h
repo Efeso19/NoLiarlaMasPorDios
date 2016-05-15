@@ -36,6 +36,7 @@ public:
     void cartelGameOver();
     void setLastTime(int c);
     void mostrarLlave();
+    void cartelPresidente();
     //void setHudVotosValue(int votoObtenido);
     int getPosx();
     sf::Sprite getHudVotos();
@@ -59,6 +60,8 @@ public:
     int lastTime;
     int countdown; 
     sf::Text hudVotosValue; //Numero de votos
+    int tiempoInicio;
+    int votosConseguidos;
 private:
     
     int ancho;
@@ -81,7 +84,7 @@ private:
     sf::Sprite contador; //Reloj
     sf::Text contadorValue; //Valor cuenta atras
     std::string convertTime;  //Para convertir de int a String el tiempo
-    int votosConseguidos;
+    
     std::string convertVotos;
     
     int **matriz; //Para el spritesheet del HUD

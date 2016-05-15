@@ -110,10 +110,11 @@ public:
     int secundario1 = 0;
     int secundario2 = 0;
     
+    int incrementoTiempo=0;
     
 private:
 
-
+    bool aux;
        static Mundo* pinstance;
     
 };

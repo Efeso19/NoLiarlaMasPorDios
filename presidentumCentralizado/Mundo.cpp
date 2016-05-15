@@ -260,9 +260,10 @@ bool Mundo::crearMundo(int l){
     musica->setBuffer(*buffer);
     musica->setLoop(true);
     //musica->play(); 
-    
+    aux= true;//no tocar
     
     mundoCreado = true;
+    
     //EInGame::Instance(Juego::Instance())->eliminandoMundo = false;
     return true;
 
@@ -369,7 +370,7 @@ void Mundo::Update(){
 }
 
 void Mundo::Render(){
-    
+    bool aux2 = false;
     
         mapa->dibuja();
       
@@ -743,18 +744,29 @@ void Mundo::Render(){
             
             //switch(Juego::Instance()->event.type){     
                 //Si se recibe el evento de cerrar la ventana la cierro
-        //if(Jugador::Instance()->estadoDelPacto == 2 || Jugador::Instance()->estadoDelPacto == 3){
+        if(Jugador::Instance()->estadoDelPacto == 2 || Jugador::Instance()->estadoDelPacto == 3){
             
         
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::X)){
-
-               EInGame::Instance(Juego::Instance())->eliminarMundo();
-               musica->stop();
-
+                if(faseActual == 3){
+                    if(aux){
+                        sumarValoresTotales();
+                        aux=false;
+                        aux2 = true; 
+                    }
+                    
+                }else{
+                    EInGame::Instance(Juego::Instance())->eliminarMundo();
+                    musica->stop();
+                }
 
             }
-        //}
+        }
         ///}
+        
+        if(aux2){
+            camara->cartelPresidente();
+        }
         
 }
 
@@ -814,10 +826,19 @@ Mundo::~Mundo() {
 void Mundo::sumarValoresTotales(){
     
     std::cout<<"estoy en la fase: "<<faseActual<<std::endl;
+        tiempoEmpleado += (camara->tiempoInicio-camara->lastTime);
+    std::cout<<"tiempo total:"<<tiempoEmpleado<<std::endl;
+    incrementoTiempo = camara->votosConseguidos + (Jugador::Instance()->enemigosEliminados*2) + camara->lastTime;
+            
     
+        
     if(Jugador::Instance()->carcelAbierta){
         numSimpatizantesLiberados++;
+        incrementoTiempo +=15;
     }
+    
+    std::cout<<"El incremento del timepo es: "<<camara->votosConseguidos<<"+("<<Jugador::Instance()->enemigosEliminados*2<<")+"<<camara->lastTime<<"+15="<<incrementoTiempo<<std::endl;
+    
     if(Jugador::Instance()->estadoDelPacto == 2){
         numPactosRealizados ++;
         if(secundario2 == 0 && secundario1 != 0){

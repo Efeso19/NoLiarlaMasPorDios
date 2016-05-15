@@ -155,30 +155,34 @@ Camara::Camara(){
     
 
     
-   font.loadFromFile("fonts/MyriadPro Regular.ttf");
+    font.loadFromFile("fonts/MyriadPro Regular.ttf");
 
-     fontpixelated.loadFromFile("fonts/MyriadPro Regular.ttf");
-     
-     votosConseguidos=0;
-     convertVotos=to_string(votosConseguidos);
-     hudVotosValue.setString(convertVotos);
-     hudVotosValue.setFont(fontpixelated);
-     hudVotosValue.setCharacterSize(30);
-     hudVotosValue.setColor(sf::Color::White);
-     
+    fontpixelated.loadFromFile("fonts/MyriadPro Regular.ttf");
+
+    votosConseguidos=0;
+    convertVotos=to_string(votosConseguidos);
+    hudVotosValue.setString(convertVotos);
+    hudVotosValue.setFont(fontpixelated);
+    hudVotosValue.setCharacterSize(30);
+    hudVotosValue.setColor(sf::Color::White);
+
+
+
+    //temporizador
+    countdown = 70;
+    if(Mundo::Instance()->faseActual > 1){
+        countdown += Mundo::Instance()->incrementoTiempo;
+    }
     
-     
-     //temporizador
+    tiempoInicio = countdown;
+    convertTime= to_string(countdown);
+    
 
-     countdown = 200;
-     convertTime= to_string(countdown);
-
-
-     contadorValue.setFont(font);
-     contadorValue.setString(convertTime);
-     contadorValue.setPosition(533,30);
-     contadorValue.setCharacterSize(20);
-     contadorValue.setColor(sf::Color::Black);
+    contadorValue.setFont(font);
+    contadorValue.setString(convertTime);
+    contadorValue.setPosition(533,30);
+    contadorValue.setCharacterSize(20);
+    contadorValue.setColor(sf::Color::Black);
      
      
     //Cargo la imagen donde reside la textura del sprite del HUD
@@ -814,6 +818,7 @@ void Camara::cartelFinal(){
         lines+=to_string("NO");
     }
     lines+="\nTIEMPO: ";
+    
     lines+=to_string(lastTime);
     lines+="\nPresiona la 'X' para continuar";
 
@@ -828,6 +833,10 @@ void Camara::cartelFinal(){
     Juego::Instance()->window->draw(cartel);
     Juego::Instance()->window->draw(tituloText);
     Juego::Instance()->window->draw(cuerpoText);
+    
+    if(Mundo::Instance()->faseActual == 3){
+        cartelPresidente();
+    }
     
 }
 
@@ -902,5 +911,66 @@ void Camara::mostrarLlave(){
         Juego::Instance()->window->draw(*Mundo::Instance()->llave);
         
     }
+    
+}
+
+
+
+void Camara::cartelPresidente(){
+    if(lastTime==0)
+        setLastTime(countdown);
+    // Texto
+    sf::Font font;  
+    font.loadFromFile("fonts/alterebro-pixel-font.ttf");
+  
+    sf::RectangleShape bgCartel;
+    bgCartel.setFillColor(sf::Color(180,255,180,200));
+    bgCartel.setSize(sf::Vector2f((float)Juego::Instance()->window->getSize().x, (float)Juego::Instance()->window->getSize().y));
+    bgCartel.setOrigin((float)bgCartel.getSize().x/2, (float)bgCartel.getSize().y/2);
+    bgCartel.setPosition(camara->getCenter().x,camara->getCenter().y);
+    
+    sf::RectangleShape cartel;
+    cartel.setFillColor(sf::Color(255,255,255,255));
+    cartel.setSize(sf::Vector2f((float)Juego::Instance()->window->getSize().x/1.4, (float)Juego::Instance()->window->getSize().y/1.4));
+    cartel.setOrigin((float)cartel.getSize().x/2, (float)cartel.getSize().y/2);
+    cartel.setPosition(camara->getCenter().x,camara->getCenter().y);
+    cartel.setOutlineColor(sf::Color::Black);
+    cartel.setOutlineThickness(2);
+    
+    sf::Text tituloText("-ERES EL PRESIDENTE-", font, 30);
+
+    //tituloText.setPosition(cartel.getOrigin().x+40,cartel.getOrigin().y-140);
+    tituloText.setPosition(camara->getCenter().x-130,camara->getCenter().y-230);
+    tituloText.setCharacterSize(70);
+    tituloText.setColor(sf::Color::Black);
+   
+    std::string lines = std::string("Tus stats finales son:");
+    lines+="\n\nVOTOS CONSEGUIDOS: ";
+    lines+=to_string(Mundo::Instance()->votosTotales);
+    lines+="\nPACTOS REALIZADOS: ";
+    lines+=to_string(Mundo::Instance()->numPactosRealizados);
+    
+
+    lines+="\nENEMIGOS DERROTADOS: ";
+    lines+=to_string(Mundo::Instance()->enemigosTotalesEliminados);
+    lines+="\nSIMPATIZANTES LIBERADOS: ";
+    lines+=to_string(Mundo::Instance()->numSimpatizantesLiberados);
+    
+    lines+="\nTIEMPO REQUERIDO: ";
+    
+    lines+=to_string(Mundo::Instance()->tiempoEmpleado);
+    lines+="\nPresiona la 'X' para volver al menu";
+
+    sf::Text cuerpoText(lines, font, 30);
+    //cuerpoText.setPosition(cartel.getOrigin().x-100,cartel.getOrigin().y-70);
+    cuerpoText.setPosition(camara->getCenter().x-160,camara->getCenter().y-160);
+   
+    cuerpoText.setCharacterSize(50);
+    cuerpoText.setColor(sf::Color::Black);
+    
+    Juego::Instance()->window->draw(bgCartel);
+    Juego::Instance()->window->draw(cartel);
+    Juego::Instance()->window->draw(tituloText);
+    Juego::Instance()->window->draw(cuerpoText);
     
 }
