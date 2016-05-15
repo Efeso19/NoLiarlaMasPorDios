@@ -51,7 +51,7 @@ bool Mundo::crearMundo(int l){
     
     //JUGADOR/////////////////
     Jugador::Instance();
-    Jugador::Instance()->iniciarJugador(60, 340, l, true);
+    Jugador::Instance()->iniciarJugador(60, 340, l, 4, 0, true);
     Jugador::Instance()->vidasPrincipales= corazonesPrincipal;
     Jugador::Instance()->vidas = barrasPrincipal;
     Jugador::Instance()->vidasMiniaturas1 = barrasSecundario1;
@@ -61,11 +61,11 @@ bool Mundo::crearMundo(int l){
    if(faseActual==0 || faseActual>3) //MIRAR Mundo.h
         faseActual=1;
    
-    
+    /*
     lugaresVisitados[1] = -1;
     lugaresVisitados[2] = -1;
     lugaresVisitados[3] = -1;
-    
+    */
         
     
     std::cout<<"Has seleccionado al jugador de: ";
@@ -522,7 +522,7 @@ void Mundo::Render(){
         
         mapa->dibujaSimpatizante();
         Jugador::Instance()->comprobarCelda();
-        Jugador::Instance()->draw();
+        //Jugador::Instance()->draw();
         camara->mostrarLlave();
         Juego::Instance()->window->draw(camara->getHudVotos());
         Juego::Instance()->window->draw(camara->getHudVotosValue());
@@ -531,6 +531,7 @@ void Mundo::Render(){
         
         if(Jugador::Instance()->seleccionJugador==2){
             if(Jugador::Instance()->prueba==1 || Jugador::Instance()->prueba==2 || Jugador::Instance()->prueba==3 || Jugador::Instance()->prueba==4){
+                Jugador::Instance()->draw();
                 Juego::Instance()->window->draw(camara->getMiniatura1());
                 Juego::Instance()->window->draw(camara->getMiniatura1vida());
                 camara->actualizarVidasMiniaturas(Jugador::Instance()->vidasMiniaturas1, Jugador::Instance()->prueba, Jugador::Instance()->seleccionJugador);
@@ -545,7 +546,7 @@ void Mundo::Render(){
                    }
 
                 if(Jugador::Instance()->vidasMiniaturas1>0 || Jugador::Instance()->ultimo==2){
-                    //Jugador::Instance()->draw(Juego::Instance()->window);
+                    Jugador::Instance()->draw();
                     //delete *player->seleccionJugador=2;
                 }
                 /*if(player->vidasMiniaturas1==0){
@@ -577,6 +578,7 @@ void Mundo::Render(){
         
         if(Jugador::Instance()->seleccionJugador==3){
             if(Jugador::Instance()->prueba2==1 || Jugador::Instance()->prueba2==2 || Jugador::Instance()->prueba2==3 || Jugador::Instance()->prueba2==4){
+                Jugador::Instance()->draw();
                 Juego::Instance()->window->draw(camara->getMiniatura2());
                 Juego::Instance()->window->draw(camara->getMiniatura2vida());
                 camara->actualizarVidasMiniaturas(Jugador::Instance()->vidasMiniaturas2, Jugador::Instance()->prueba2, Jugador::Instance()->seleccionJugador);
@@ -589,7 +591,7 @@ void Mundo::Render(){
                        }
                    }
                 if(Jugador::Instance()->vidasMiniaturas2>0 || Jugador::Instance()->ultimo==3){
-                    //player->draw(window);
+                    Jugador::Instance()->draw();
                     //delete *player->seleccionJugador=3; 
                 }
 
@@ -632,7 +634,7 @@ void Mundo::Render(){
             
             if(Jugador::Instance()->vidasPrincipales>0 && Jugador::Instance()->ultimo==1){
                 //std::cout<<"MUERTOOOOOOOOO EL 11111111::::"<<player->vidasPrincipales<<std::endl;
-                //player->draw(window);
+                Jugador::Instance()->draw();
                 //delete *player->seleccionJugador=1;
             }
             
@@ -712,10 +714,26 @@ void Mundo::Render(){
         }
         camara->draw();
         
-        if(Jugador::Instance()->muerto || Mundo::Instance()->camara->countdown==0){     //CONTORLA QUE APAREZCA EL CARTEL DE GAME OVER
+        if(Jugador::Instance()->muerto || Mundo::Instance()->camara->countdown==0 || (Jugador::Instance()->vidasPrincipales<=0 && Jugador::Instance()->vidasMiniaturas1==0  &&  Jugador::Instance()->vidasMiniaturas2==0)){     //CONTORLA QUE APAREZCA EL CARTEL DE GAME OVER
+            Jugador::Instance()->muerto= true;
             camara->cartelGameOver();
             //Mundo::Instance()->musica.stop();
             std::cout<<"HA MUEEEEERTO!!!"<<std::endl;
+        }
+        
+        if(Jugador::Instance()->prueba==0 && Jugador::Instance()->prueba2==0 && Jugador::Instance()->vidasPrincipales<=0){
+                Jugador::Instance()->muerto= true;
+                camara->cartelGameOver();
+        }
+        
+        if(Jugador::Instance()->prueba==0 && Jugador::Instance()->vidasMiniaturas2==0 && Jugador::Instance()->vidasPrincipales<=0){
+                Jugador::Instance()->muerto= true;
+                camara->cartelGameOver();
+        }
+        
+        if(Jugador::Instance()->prueba2==0 && Jugador::Instance()->vidasMiniaturas1==0 && Jugador::Instance()->vidasPrincipales<=0){
+                Jugador::Instance()->muerto= true;
+                camara->cartelGameOver();
         }
         
         

@@ -28,7 +28,7 @@ public:
     static Jugador* Instance();
     Jugador();
     Jugador(const Jugador& orig);
-    void iniciarJugador(float x, float y, int politic, bool activado);//1.Pablo 2.Albert 3.Rajoy 4.Pedro
+    void iniciarJugador(float x, float y, int politic, int politic2, int politic3, bool activado);//1.Pablo 2.Albert 3.Rajoy 4.Pedro
     ~Jugador();
     sf::Sprite getSprite();
     void leerXML();

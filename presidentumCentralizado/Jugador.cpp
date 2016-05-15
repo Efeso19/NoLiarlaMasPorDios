@@ -55,9 +55,9 @@ Jugador::Jugador(const Jugador& orig) {
 Jugador::~Jugador() {
 }
 
-void Jugador::iniciarJugador(float x, float y, int politic, bool activado){
-    prueba=0;
-    prueba2=0;
+void Jugador::iniciarJugador(float x, float y, int politic, int politic2, int politic3, bool activado){
+    //prueba=0;
+    //prueba2=0;
     vidas=10;
     vidasPrincipales=3;
     seleccionJugador=1;
@@ -77,6 +77,62 @@ void Jugador::iniciarJugador(float x, float y, int politic, bool activado){
     politico=politic;
     leerXML();
     switch(politico){
+        case 1:
+            if(!texturaJugador.loadFromFile("resources/pablospritesheet.png")){
+                std::cerr<<"Error al cargar la textura de pablospritesheet.png";
+            }
+            break;
+        case 2:
+            if(!texturaJugador.loadFromFile("resources/albertspritesheet.png")){
+                std::cerr<<"Error al cargar la textura de albertspritesheet.png";
+            }
+            break;
+        case 3:
+            if(!texturaJugador.loadFromFile("resources/marianospritesheet.png")){
+                std::cerr<<"Error al cargar la textura de marianospritesheet.png";
+            }
+            
+
+            break;
+        case 4:
+            if(!texturaJugador.loadFromFile("resources/pedrospritesheet.png")){
+                std::cerr<<"Error al cargar la textura de pedrospritesheet.png";
+            }
+            break;
+            
+    }
+    
+    prueba=politic2;
+    leerXML();
+    switch(prueba){
+        case 1:
+            if(!texturaJugador.loadFromFile("resources/pablospritesheet.png")){
+                std::cerr<<"Error al cargar la textura de pablospritesheet.png";
+            }
+            break;
+        case 2:
+            if(!texturaJugador.loadFromFile("resources/albertspritesheet.png")){
+                std::cerr<<"Error al cargar la textura de albertspritesheet.png";
+            }
+            break;
+        case 3:
+            if(!texturaJugador.loadFromFile("resources/marianospritesheet.png")){
+                std::cerr<<"Error al cargar la textura de marianospritesheet.png";
+            }
+            
+
+            break;
+        case 4:
+            if(!texturaJugador.loadFromFile("resources/pedrospritesheet.png")){
+                std::cerr<<"Error al cargar la textura de pedrospritesheet.png";
+            }
+            break;
+            
+    }
+    
+    prueba2=politic3;
+    leerXML();
+    switch(prueba2){
         case 1:
             if(!texturaJugador.loadFromFile("resources/pablospritesheet.png")){
                 std::cerr<<"Error al cargar la textura de pablospritesheet.png";
@@ -551,9 +607,9 @@ void Jugador::handle(){
 
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) || seleccionJugador==2){
 
-                prueba=politico;
+                //prueba=politico;
                 //politico=4;
-                prueba=4;
+                //prueba=4;
                 seleccionJugador=2;
                 //vidasMiniaturas1=vidasMiniaturas1;
 
@@ -601,9 +657,9 @@ void Jugador::handle(){
 
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)  || seleccionJugador==3){
 
-                prueba2=politico;
+                //prueba2=politico;
                 //politico=4;
-                prueba2=3;
+                //prueba2=3;
                 //politico=3;
                 seleccionJugador=3;
                 //vidasMiniaturas2=vidasMiniaturas2;
