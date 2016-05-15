@@ -13887,7 +13887,7 @@
   </data>
  </layer>
  <objectgroup color="#55007f" name="BOSS FINAL">
-  <object id="329" x="7615" y="323.333" width="66" height="98"/>
+  <object id="329" x="7615" y="321.333" width="66" height="98"/>
  </objectgroup>
  <objectgroup draworder="index" name="Suelo">
   <properties>
