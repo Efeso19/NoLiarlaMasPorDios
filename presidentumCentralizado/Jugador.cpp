@@ -415,23 +415,11 @@ void Jugador::handle(){
     }
 */
 
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-        
-        if(!EMenu::Instance(Juego::Instance())->enPausa){
-            
-            EMenu::Instance(Juego::Instance())->salida = false;
-           Mundo::Instance()->pausa = true;
+    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && !EMenu::Instance(Juego::Instance())->enPausa && EMenu::Instance(Juego::Instance())->pauseLimiter.getElapsedTime().asSeconds()>0.2){
 
-        
+           EMenu::Instance(Juego::Instance())->salida = false;
            EMenu::Instance(Juego::Instance())->enPausa = true;
            EMenu::Instance(Juego::Instance())->Handle();
-         
-        }
-      
-           
-        
-        
-
        
     }
     

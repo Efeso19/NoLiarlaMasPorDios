@@ -99,8 +99,11 @@ void EInGame::eliminarMundo(){
     std::cout<<"Pues parece que va"<<std::endl;
     
     eliminandoMundo = true;
+    
+    Mundo::Instance()->musica->stop();
     Mundo::Instance()->faseActual++;
     Mundo::Instance()->eliminarMundo();
+    Mundo::Instance()->mundoCreado = false;
     ECargando::Instance(Juego::Instance())->Handle();
     
 }

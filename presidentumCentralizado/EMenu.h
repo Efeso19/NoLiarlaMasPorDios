@@ -77,6 +77,8 @@ public:
     
     int partidoSeleccionado;
     bool salida;
+    sf::Clock pauseLimiter;
+    
     
     bool mostrarMenuppal;
     bool enPartida;

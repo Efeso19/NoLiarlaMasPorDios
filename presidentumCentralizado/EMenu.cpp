@@ -415,7 +415,6 @@ int EMenu::run(sf::RenderWindow &window){
 void EMenu::Render(){
     
     
-    
     //aqui mostramos en la ventana las diferentes opciones
     Juego::Instance()->window->clear();
     if(mostrarMenuppal){
@@ -439,7 +438,7 @@ void EMenu::Render(){
                     //entramos aqui si hemos pulsado continuar en el menu de pausa
                     
                     enPausa=false;
-                    opcionMenuInGame=5;
+                    opcionMenuInGame=-1;
                     salida = true;
                     EInGame::Instance(Juego::Instance())->Handle();
                 }
@@ -502,7 +501,7 @@ void EMenu::draw(sf::RenderWindow& window, std::vector<sf::Text*> menu){
         window.draw(*i);
     }
     
-    if(!Mundo::Instance()->mundoCreado)
+    if(!Mundo::Instance()->mundoCreado && mostrarMenuppal)
     window.draw(*logoMenu);
     
 }
@@ -700,6 +699,7 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
 
                         
                         salida = true;
+                        enPausa = false;
                         ECargando::Instance(Juego::Instance())->Handle();
                         
                     }
@@ -732,7 +732,6 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                             if(GetPressedItemInPausa()==3){
                                 //estoy en Opciones
                                 enOpciones=true;
-                                std::cout<<"haciendo el ridiculo"<<std::endl;
                                 pausaopciones=true;
                                 std::cout<<"Estoy en el menu opciones"<<std::endl;
                                 selectedItemIndexInPausa=0;
@@ -741,16 +740,16 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                                     mostrarMenuppal=false;
                                     enOpciones=false;
                                     pausaopciones=false;
+                        
                                 }
                             }
                             if(GetPressedItemInPausa()==4){
                                 ///he presionado salir al menu principal
                                 reinicio();
                                 mostrarMenuppal=true;
-                                enPausa=false;
-                                enPartida=false;
                                 opcionMenuppal=6;
                                 selectedItemIndexInPausa=0;
+                                EInGame::Instance(Juego::Instance())->eliminarMundo();
                                 //setteamos el menu para que los colores se muestren correctamente
                                 int i=0;
                                     for(i=0; i<menuInGame.size(); i++){
@@ -879,7 +878,12 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                                 }
                                 else{
                                     enPausa=false;
+                                    salida = true;
                                     std::cout<<"Ya no estoy en pausa"<<std::endl;
+                                    EInGame::Instance(Juego::Instance())->Handle();
+                                    pauseLimiter.restart();
+                                    break;
+                                    
                                     
                                 }
                                
@@ -901,6 +905,7 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                             std::cout<<pausaopciones<<std::endl;
                             std::cout<<"impresas todas las variables booleanas"<<std::endl;*/
                             enPausa=true;
+                            
                            
                         }  
                     }  
