@@ -32,7 +32,7 @@ public:
     void dibujaVotos();
     void dibujaPlataformas();
     void reconstruirPlataformas();
-    void dibujaSimpatizante();
+    void dibujaSimpatizante(int politico, int fase);
     void dibujaCarcelCerrada();
     void dibujaCarcelAbierta();
     void dibujaDialogoAbierto();
@@ -75,6 +75,8 @@ public:
     sf::Sprite *spriteAyuda2;
     sf::Sprite *spriteAyuda3;
     sf::Sprite *spriteAyuda4;
+    int simpaX;
+    int simpaY;
 private:
     
     int ***_tilemap;
@@ -93,7 +95,7 @@ private:
     sf::Texture fond;
     sf::Texture texVoto;
     sf::Texture texDialogoPacto;
-    sf::Texture texSimpa;
+    sf::Texture *texSimpa;
     sf::Texture texBocadilloAbierta;
     sf::Texture texBocadilloCerrada;
     sf::Texture* texAyuda1;

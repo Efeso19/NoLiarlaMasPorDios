@@ -244,8 +244,8 @@ bool Mundo::crearMundo(int l){
             std::cout<<"Error cargando PP.flac"<<std::endl;  
     } 
     if(nivel==2 || nivel==6 || nivel==10){
-        if (!buffer->loadFromFile("resources/PSOE/PSOE.flac"))
-            std::cout<<"Error cargando PSOE.flac"<<std::endl;  
+         if (!buffer->loadFromFile("resources/PSOE/PSOE.flac"))
+            std::cout<<"Error cargando PSOE.flac"<<std::endl;   
     } 
     if(nivel==3 || nivel==7 || nivel==11){
         if (!buffer->loadFromFile("resources/CIUDADANOS/CIUDADANOS.flac"))
@@ -304,7 +304,7 @@ void Mundo::Update(){
 //    for(int i=0; i<Jugador::Instance()->proyectiles->size();i++){
 //        Jugador::Instance()->proyectiles->at(i)->dibuja();
 //        if(Jugador::Instance()->proyectiles->at(i)->destruir()){
-//            if(!Jugador::Instance()->proyectiles->empty()){
+ //            if(!Jugador::Instance()->proyectiles->empty()){
 //                //Hay que comprobar que el vector no este vacio cuando quiera eliminar un objeto
 //                delete Jugador::Instance()->proyectiles->at(i);
 //                Jugador::Instance()->proyectiles->erase(Jugador::Instance()->proyectiles->begin()+i);
@@ -382,14 +382,10 @@ void Mundo::Render(){
         
         if(faseActual == 1){
             mapa->dibujaAyuda1();
-            std::cout<<"joder"<<std::endl;
             mapa->dibujaAyuda2();
-            std::cout<<"joder2"<<std::endl;
             mapa->dibujaAyuda3();
-            std::cout<<"joder3"<<std::endl;
             mapa->dibujaAyuda4();
         }
-        std::cout<<"joder4"<<std::endl;
         //dibujo los dos vectores de los enemigos
         for(int i=0; i<enemigosCuerpo->size(); i++){
             enemigosCuerpo->at(i)->draw();
@@ -520,7 +516,7 @@ void Mundo::Render(){
         }
 
         
-        mapa->dibujaSimpatizante();
+        mapa->dibujaSimpatizante(Jugador::Instance()->politico, faseActual);
         Jugador::Instance()->comprobarCelda();
         //Jugador::Instance()->draw();
         camara->mostrarLlave();

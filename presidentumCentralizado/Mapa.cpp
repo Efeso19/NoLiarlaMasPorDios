@@ -608,13 +608,16 @@ void Mapa::leerMapa(int numMapa){
                         x=atoi(xString.c_str());
                         y=atoi(yString.c_str());
                         
+                        simpaX=x;
+                        simpaY=y;
                         
         /***************************SIMPATIZANTE**********************************/
-                        if (!texSimpa.loadFromFile("resources/simpatizantes/RITA.png")) {
+                        texSimpa = new sf::Texture();
+                        if (!texSimpa->loadFromFile("resources/simpatizantes/RITA.png")) {
                                 std::cerr << "Error cargando la imagen RITA.png";
                                 exit(0);
                         }
-                        spriteSimpa = new sf::Sprite(texSimpa); 
+                        spriteSimpa = new sf::Sprite(*texSimpa); 
                         spriteSimpa->setPosition(x, y);
                         
                         object = object->NextSiblingElement("object");
@@ -1030,7 +1033,150 @@ void Mapa::dibujaVotos(){
     }
 }
 
-void Mapa::dibujaSimpatizante(){
+void Mapa::dibujaSimpatizante(int politico, int fase){
+    if(politico==1){ //SIMPATIZANTES DE IGLESIAS
+        if(fase==1){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/CHAVEZ.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+
+            spriteSimpa = new sf::Sprite(*texSimpa);
+            spriteSimpa->setPosition(simpaX, simpaY);
+             
+        }
+        
+        if(fase==2){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/MONEDERO.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+        
+        if(fase==3){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/ERREJON.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+    }
+    
+    if(politico==2){ //SIMPATIZANTES DE RIVERA
+        if(fase==1){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/ARRIMADAS.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+
+            spriteSimpa = new sf::Sprite(*texSimpa);
+            spriteSimpa->setPosition(simpaX, simpaY);
+             
+        }
+        
+        if(fase==2){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/BEGONA.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+        
+        if(fase==3){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/AGUIRRE.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+    }
+    
+    if(politico==3){ //SIMPATIZANTES DE RAJOY
+        if(fase==1){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/RITA.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+
+            spriteSimpa = new sf::Sprite(*texSimpa);
+            spriteSimpa->setPosition(simpaX, simpaY);
+             
+        }
+        
+        if(fase==2){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/BOTELLA.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+        
+        if(fase==3){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/BARCENAS.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+    }
+    
+    if(politico==4){ //SIMPATIZANTES DE SANCHEZ
+        if(fase==1){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/RUBALCABA.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+
+            spriteSimpa = new sf::Sprite(*texSimpa);
+            spriteSimpa->setPosition(simpaX, simpaY);
+             
+        }
+        
+        if(fase==2){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/FELIPEGONZALEZGafas.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+        
+        if(fase==3){
+            texSimpa = new sf::Texture();
+            if (!texSimpa->loadFromFile("resources/simpatizantes/ZAPATERO.png")) {
+                    std::cerr << "Error cargando la imagen RITA.png";
+                    exit(0);
+            }
+            
+            spriteSimpa = new sf::Sprite(*texSimpa); 
+            spriteSimpa->setPosition(simpaX, simpaY);
+        }
+    }
     Juego::Instance()->window->draw(*spriteSimpa);
     
 }
