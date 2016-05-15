@@ -376,7 +376,8 @@ void Mundo::Render(){
       //Jugador::Instance()->proyectiles->
       
         mapa->dibujaPlataformas();
-      
+        mapa->reconstruirPlataformas();
+        
         mapa->dibujaVotos();
         
         if(faseActual == 1){
@@ -384,6 +385,10 @@ void Mundo::Render(){
             mapa->dibujaAyuda2();
             mapa->dibujaAyuda3();
             mapa->dibujaAyuda4();
+        }
+        
+        if(faseActual == 2){
+            mapa->dibujaAyuda5();
         }
         //dibujo los dos vectores de los enemigos
         for(int i=0; i<enemigosCuerpo->size(); i++){

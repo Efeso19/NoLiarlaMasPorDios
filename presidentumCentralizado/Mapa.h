@@ -42,6 +42,7 @@ public:
     void dibujaAyuda2();
     void dibujaAyuda3();
     void dibujaAyuda4();
+    void dibujaAyuda5();
 
     //FONDO///////////////
     int cuantasVecesDeboPintarElFondo;
@@ -75,6 +76,7 @@ public:
     sf::Sprite *spriteAyuda2;
     sf::Sprite *spriteAyuda3;
     sf::Sprite *spriteAyuda4;
+    sf::Sprite *spriteAyuda5;
     int simpaX;
     int simpaY;
 private:
@@ -102,6 +104,7 @@ private:
     sf::Texture* texAyuda2;
     sf::Texture* texAyuda3;
     sf::Texture* texAyuda4;
+    sf::Texture* texAyuda5;
     
     sf::Texture texCarcelCerrada;
     sf::Texture texCarcelAbierta;
