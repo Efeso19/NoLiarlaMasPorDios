@@ -61,11 +61,11 @@ bool Mundo::crearMundo(int l){
    if(faseActual==0 || faseActual>3) //MIRAR Mundo.h
         faseActual=1;
    
-    /*
+    
     lugaresVisitados[1] = -1;
     lugaresVisitados[2] = -1;
     lugaresVisitados[3] = -1;
-    */
+    
         
     
     std::cout<<"Has seleccionado al jugador de: ";
