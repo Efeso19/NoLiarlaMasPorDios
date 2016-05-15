@@ -65,7 +65,7 @@ bool Mundo::crearMundo(int l){
     lugaresVisitados[2] = -1;
     lugaresVisitados[3] = -1;
             
-    
+        
     
     std::cout<<"Has seleccionado al jugador de: ";
     if(nivel==1)std::cout<<"PODEMOS"<<std::endl;
@@ -374,6 +374,10 @@ void Mundo::Render(){
       
         mapa->dibujaVotos();
         
+        mapa->dibujaAyuda1();
+        mapa->dibujaAyuda2();
+        mapa->dibujaAyuda3();
+        mapa->dibujaAyuda4();
         
         //dibujo los dos vectores de los enemigos
         for(int i=0; i<enemigosCuerpo->size(); i++){

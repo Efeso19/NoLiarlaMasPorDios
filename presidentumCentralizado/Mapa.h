@@ -38,6 +38,10 @@ public:
     void dibujaDialogoAbierto();
     void dibujaDialogoCerrado();
     void dibujaDialogoPacto();
+    void dibujaAyuda1();
+    void dibujaAyuda2();
+    void dibujaAyuda3();
+    void dibujaAyuda4();
 
     //FONDO///////////////
     int cuantasVecesDeboPintarElFondo;
@@ -67,6 +71,10 @@ public:
     sf::Sprite *spriteBocadilloAbierta;
     sf::Sprite *spriteBocadilloCerrada;
     sf::Sprite *spriteDialogoPacto;
+    sf::Sprite *spriteAyuda1;
+    sf::Sprite *spriteAyuda2;
+    sf::Sprite *spriteAyuda3;
+    sf::Sprite *spriteAyuda4;
 private:
     
     int ***_tilemap;
@@ -88,6 +96,10 @@ private:
     sf::Texture texSimpa;
     sf::Texture texBocadilloAbierta;
     sf::Texture texBocadilloCerrada;
+    sf::Texture* texAyuda1;
+    sf::Texture* texAyuda2;
+    sf::Texture* texAyuda3;
+    sf::Texture* texAyuda4;
     
     sf::Texture texCarcelCerrada;
     sf::Texture texCarcelAbierta;

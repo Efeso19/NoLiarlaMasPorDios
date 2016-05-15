@@ -744,6 +744,138 @@ void Mapa::leerMapa(int numMapa){
                 }
              pacto = pacto->NextSiblingElement("objectgroup");
          }
+        
+        TiXmlElement *ayuda1 = map->FirstChildElement("objectgroup");
+        while(ayuda1){
+            
+            nombre=(string) ayuda1->Attribute("name");
+           
+            if(nombre=="aprendeAndar"){
+                    cout<<"nombre: "<<nombre<<endl;
+                    TiXmlElement *object = ayuda1->FirstChildElement("object");
+                    while(object){
+                        xString = (string) object->Attribute("x");
+                        yString = (string) object->Attribute("y");
+                        
+                        x=atoi(xString.c_str());
+                        y=atoi(yString.c_str());
+                        
+                        
+                        texAyuda1 = new sf::Texture();
+                        if (!texAyuda1->loadFromFile("resources/aprendeAndar.png")) {
+                                std::cerr << "Error cargando la imagen aprendeAndar.png";
+                                exit(0);
+                        }
+                        
+                        spriteAyuda1 = new sf::Sprite(*texAyuda1); 
+                        spriteAyuda1->setPosition(x, y);
+
+                        
+                        object = object->NextSiblingElement("object");
+                        filas++;
+                    }
+                }
+             ayuda1 = ayuda1->NextSiblingElement("objectgroup");
+         }
+        
+        TiXmlElement *ayuda2 = map->FirstChildElement("objectgroup");
+        while(ayuda2){
+            
+            nombre=(string) ayuda2->Attribute("name");
+           
+            if(nombre=="aprendeSaltar"){
+                    cout<<"nombre: "<<nombre<<endl;
+                    TiXmlElement *object = ayuda2->FirstChildElement("object");
+                    while(object){
+                        xString = (string) object->Attribute("x");
+                        yString = (string) object->Attribute("y");
+                        
+                        x=atoi(xString.c_str());
+                        y=atoi(yString.c_str());
+                        
+                        
+                        texAyuda2 = new sf::Texture();   
+                        if (!texAyuda2->loadFromFile("resources/aprendeSaltar.png")) {
+                                std::cerr << "Error cargando la imagen aprendeSaltar.png";
+                                exit(0);
+                        }
+                        
+                        spriteAyuda2 = new sf::Sprite(*texAyuda2); 
+                        spriteAyuda2->setPosition(x, y);
+
+                        
+                        object = object->NextSiblingElement("object");
+                        filas++;
+                    }
+                }
+             ayuda2 = ayuda2->NextSiblingElement("objectgroup");
+         }
+        
+         TiXmlElement *ayuda3 = map->FirstChildElement("objectgroup");
+        while(ayuda3){
+            
+            nombre=(string) ayuda3->Attribute("name");
+           
+            if(nombre=="aprendeAtacar"){
+                    cout<<"nombre: "<<nombre<<endl;
+                    TiXmlElement *object = ayuda3->FirstChildElement("object");
+                    while(object){
+                        xString = (string) object->Attribute("x");
+                        yString = (string) object->Attribute("y");
+                        
+                        x=atoi(xString.c_str());
+                        y=atoi(yString.c_str());
+                        
+                        
+                        texAyuda3 = new sf::Texture();
+                        if (!texAyuda3->loadFromFile("resources/aprendeAtacar.png")) {
+                                std::cerr << "Error cargando la imagen aprendeSaltar.png";
+                                exit(0);
+                        }
+                        
+                        spriteAyuda3 = new sf::Sprite(*texAyuda3); 
+                        spriteAyuda3->setPosition(x, y);
+
+                        
+                        object = object->NextSiblingElement("object");
+                        filas++;
+                    }
+                }
+             ayuda3 = ayuda3->NextSiblingElement("objectgroup");
+         }
+         
+          TiXmlElement *ayuda4 = map->FirstChildElement("objectgroup");
+        while(ayuda4){
+            
+            nombre=(string) ayuda4->Attribute("name");
+           
+            if(nombre=="aprendeVotar"){
+                    cout<<"nombre: "<<nombre<<endl;
+                    TiXmlElement *object = ayuda4->FirstChildElement("object");
+                    while(object){
+                        xString = (string) object->Attribute("x");
+                        yString = (string) object->Attribute("y");
+                        
+                        x=atoi(xString.c_str());
+                        y=atoi(yString.c_str());
+                        
+                        
+                        texAyuda4 = new sf::Texture();
+                        if (!texAyuda4->loadFromFile("resources/aprendeVotar.png")) {
+                                std::cerr << "Error cargando la imagen aprendeSaltar.png";
+                                exit(0);
+                        }
+                        
+                        spriteAyuda4 = new sf::Sprite(*texAyuda4); 
+                        spriteAyuda4->setPosition(x, y);
+
+                        
+                        object = object->NextSiblingElement("object");
+                        filas++;
+                    }
+                }
+             ayuda4 = ayuda4->NextSiblingElement("objectgroup");
+         }
 //     TiXmlElement *properties = colisiones->FirstChildElement("properties");
 //     string atributo;
 //     while(properties){
@@ -924,6 +1056,21 @@ void Mapa::dibujaDialogoCerrado(){
     Juego::Instance()->window->draw(*spriteBocadilloCerrada);
 }
 
+void Mapa::dibujaAyuda1(){
+    Juego::Instance()->window->draw(*spriteAyuda1);
+}
+
+void Mapa::dibujaAyuda2(){
+    Juego::Instance()->window->draw(*spriteAyuda2);
+}
+
+void Mapa::dibujaAyuda3(){
+    Juego::Instance()->window->draw(*spriteAyuda3);
+}
+
+void Mapa::dibujaAyuda4(){
+    Juego::Instance()->window->draw(*spriteAyuda4);
+}
 
 void Mapa::dibujaEnemigosC(){
 //    for(int j=0; j<arrayEnemigosC.size();j++){
