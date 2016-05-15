@@ -39,7 +39,6 @@ public:
     bool isMoving();
     void golpeando();
     void comprobarCelda();
-    void eliminarJugador();
     void resetearJugador();
    
     
