@@ -48,15 +48,18 @@ bool Mundo::crearMundo(int l){
     
     nivel = l; //NIVEL SELECCIONADO
     
+    
+    if(!resetSeq){
     //JUGADOR/////////////////
-    Jugador::Instance();
-    Jugador::Instance()->iniciarJugador(60, 340, l, secundario1, secundario2, true);
-    Jugador::Instance()->vidasPrincipales= corazonesPrincipal;
-    Jugador::Instance()->vidas = barrasPrincipal;
-    Jugador::Instance()->vidasMiniaturas1 = barrasSecundario1;
-    Jugador::Instance()->vidasMiniaturas2 = barrasSecundario2;
-    Jugador::Instance()->enemigosEliminados = 0;
-
+        Jugador::Instance();
+        Jugador::Instance()->iniciarJugador(60, 340, l, secundario1, secundario2, true);
+        Jugador::Instance()->vidasPrincipales= corazonesPrincipal;
+        Jugador::Instance()->vidas = barrasPrincipal;
+        Jugador::Instance()->vidasMiniaturas1 = barrasSecundario1;
+        Jugador::Instance()->vidasMiniaturas2 = barrasSecundario2;
+        Jugador::Instance()->enemigosEliminados = 0;
+    }
+    
    if(faseActual==0 || faseActual>3) //MIRAR Mundo.h
         faseActual=1;
    
@@ -261,7 +264,7 @@ bool Mundo::crearMundo(int l){
     musica->setLoop(true);
     //musica->play(); 
     
-    
+    resetSeq = false;
     mundoCreado = true;
     //EInGame::Instance(Juego::Instance())->eliminandoMundo = false;
     return true;
@@ -796,12 +799,49 @@ void Mundo::eliminarMundo(){
     bufferHurt = 0;
     soundSobre = 0;
     soundHurt = 0;
+            
+    ////////////////////////////////        
+            
+    lugaresVisitados[0] = 0;
+    lugaresVisitados[1] = 0;
+    lugaresVisitados[2] = 0;
+    lugaresVisitados[3] = 0;
+   
+    secundario1 = 0;
+    secundario2 = 0;
+    
+    ////////////////////////////////
+    
     
     //pinstance = 0;
     std::cout << "Mundo ha sido eliminado"   << std::endl;
     
     
 }
+
+void Mundo::reset(){
+    
+    resetSeq = true;
+    
+    votosTotales = 0;
+    enemigosTotalesEliminados = 0;
+    numPactosRealizados = 0;
+    numSimpatizantesLiberados = 0;
+    tiempoEmpleado= 0 ;
+    
+    corazonesPrincipal = 3;
+    barrasPrincipal = 10;
+    barrasSecundario1 = 10;
+    barrasSecundario2 = 10;
+    faseActual=0;
+    
+    
+
+    Jugador::Instance()->resetearJugador();
+    
+    std::cout<<"corazonesPrincipal: "<<corazonesPrincipal<<std::endl;
+}
+
 
 Mundo::~Mundo() {
    

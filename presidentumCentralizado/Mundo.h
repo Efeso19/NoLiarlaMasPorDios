@@ -34,6 +34,8 @@ public:
     
     void eliminarMundo();
     
+    void reset();
+    
     void sumarValoresTotales();
     void actualizarVidas();
     
@@ -110,6 +112,7 @@ public:
     int secundario1 = 0;
     int secundario2 = 0;
     
+    bool resetSeq;
     
 private:
 
