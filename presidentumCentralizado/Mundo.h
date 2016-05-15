@@ -106,6 +106,9 @@ public:
     int barrasPrincipal = 10;
     int barrasSecundario1 = 10;
     int barrasSecundario2 = 10;
+   
+    int secundario1 = 0;
+    int secundario2 = 0;
     
     
 private:

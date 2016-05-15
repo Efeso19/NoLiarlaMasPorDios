@@ -48,15 +48,14 @@ bool Mundo::crearMundo(int l){
     
     nivel = l; //NIVEL SELECCIONADO
     
-    
     //JUGADOR/////////////////
     Jugador::Instance();
-    Jugador::Instance()->iniciarJugador(60, 340, l, 4, 0, true);
+    Jugador::Instance()->iniciarJugador(60, 340, l, secundario1, secundario2, true);
     Jugador::Instance()->vidasPrincipales= corazonesPrincipal;
     Jugador::Instance()->vidas = barrasPrincipal;
     Jugador::Instance()->vidasMiniaturas1 = barrasSecundario1;
     Jugador::Instance()->vidasMiniaturas2 = barrasSecundario2;
-            
+    Jugador::Instance()->enemigosEliminados = 0;
 
    if(faseActual==0 || faseActual>3) //MIRAR Mundo.h
         faseActual=1;
@@ -712,6 +711,7 @@ void Mundo::Render(){
         
         if(Jugador::Instance()->muerto || Mundo::Instance()->camara->countdown==0 || (Jugador::Instance()->vidasPrincipales<=0 && Jugador::Instance()->vidasMiniaturas1==0  &&  Jugador::Instance()->vidasMiniaturas2==0)){     //CONTORLA QUE APAREZCA EL CARTEL DE GAME OVER
             Jugador::Instance()->muerto= true;
+            Jugador::Instance()->estadoDelPacto = 4; //para que se pare el tiempo del reloj
             camara->cartelGameOver();
             //Mundo::Instance()->musica.stop();
             std::cout<<"HA MUEEEEERTO!!!"<<std::endl;
@@ -808,11 +808,48 @@ Mundo::~Mundo() {
 
 void Mundo::sumarValoresTotales(){
     
+    std::cout<<"estoy en la fase: "<<faseActual<<std::endl;
+    
     if(Jugador::Instance()->carcelAbierta){
         numSimpatizantesLiberados++;
     }
     if(Jugador::Instance()->estadoDelPacto == 2){
         numPactosRealizados ++;
+        if(secundario2 == 0 && secundario1 != 0){
+            switch(nivel){
+                case 1: case 5: case 9:
+                    secundario2 = 3;
+                    break;
+                case 2: case 6: case 10:
+                    secundario2 = 4;
+                    break;
+                case 3: case 7: case 11:
+                    secundario2 = 2;
+                    break;
+                case 4: case 8: case 12:
+                    secundario2 = 1;
+                    break;                    
+            }
+        }
+        if(secundario1 == 0){
+            
+            switch(nivel){
+                case 1: case 5: case 9:
+                    secundario1 = 3;
+                    break;
+                case 2: case 6: case 10:
+                    secundario1 = 4;
+                    break;
+                case 3: case 7: case 11:
+                    secundario1 = 2;
+                    break;
+                case 4: case 8: case 12:
+                    secundario1 = 1;
+                    break;                    
+            }        
+        }
+                
+        
     }
     actualizarVidas();
     

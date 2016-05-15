@@ -398,12 +398,13 @@ sf::Text Camara::getContadorValue(){
 
 void Camara::actualizarTiempo(){
     int timer = clock.getElapsedTime().asSeconds();
-               
-    if (timer > 0 && countdown !=0){
-//        std::cout<<"tiempo!!! "<<countdown<<std::endl;
-        countdown--;
-        contadorValue.setString(to_string(countdown));
-        clock.restart();
+    if(Jugador::Instance()->estadoDelPacto == 0){           
+        if (timer > 0 && countdown !=0){
+    //        std::cout<<"tiempo!!! "<<countdown<<std::endl;
+            countdown--;
+            contadorValue.setString(to_string(countdown));
+            clock.restart();
+        }
     }
 }
 
