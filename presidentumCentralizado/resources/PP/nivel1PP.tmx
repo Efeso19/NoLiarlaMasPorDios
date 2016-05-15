@@ -9172,7 +9172,7 @@
  <objectgroup name="aprendeAtacar">
   <object id="162" x="543" y="219"/>
  </objectgroup>
- <objectgroup name="ayudaVotar">
+ <objectgroup name="aprendeVotar">
   <object id="163" x="774" y="136"/>
  </objectgroup>
 </map>
