@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="pedrospritesheet.png" width="468" height="296">
+    <sprite n="PedroSánchez.png" x="0" y="0" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezAttDer.png" x="78" y="0" w="114" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezAttIzq.png" x="192" y="0" w="114" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezDer.png" x="306" y="0" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezDer1.png" x="384" y="0" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezDer2.png" x="0" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezIzq.png" x="78" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezIzq1.png" x="156" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezIzq2.png" x="234" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezSaltoDer.png" x="312" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="PedroSánchezSaltoIzq.png" x="390" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+</TextureAtlas>

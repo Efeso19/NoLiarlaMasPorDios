@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="marianospritesheet.png" width="512" height="296">
+    <sprite n="marianoRajoy.png" x="0" y="0" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyAttDer.png" x="78" y="0" w="114" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyAttIzq.png" x="192" y="0" w="114" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyDer.png" x="306" y="0" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyDer1.png" x="384" y="0" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyDer2.png" x="0" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyIzq.png" x="78" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyIzq1.png" x="156" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoyIzq2.png" x="234" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoySaltoDer.png" x="312" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="marianoRajoySaltoIzq.png" x="390" y="148" w="78" h="148" pX="0.5" pY="0.5"/>
+    <sprite n="sobre.png" x="468" y="148" w="30" h="24" pX="0.5" pY="0.5"/>
+</TextureAtlas>

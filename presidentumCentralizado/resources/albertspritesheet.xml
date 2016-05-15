@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="albertspritesheet.png" width="256" height="512">
+    <sprite n="albertRivera.png" x="0" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraAttDer.png" x="40" y="0" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraAttIzq.png" x="120" y="0" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraDer.png" x="200" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraDer1.png" x="0" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraDer2.png" x="40" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraIzq.png" x="80" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraIzq1.png" x="120" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraIzq2.png" x="160" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraSaltoDer.png" x="200" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="albertRiveraSaltoIzq.png" x="0" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="naranja.png" x="40" y="220" w="30" h="24" pX="0.5" pY="0.5"/>
+</TextureAtlas>

@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="Estados" projectFiles="true">
+        <itemPath>ECargando.h</itemPath>
+        <itemPath>ECinematica.h</itemPath>
+        <itemPath>EInGame.h</itemPath>
+        <itemPath>EIntro.h</itemPath>
+        <itemPath>EMenu.h</itemPath>
+        <itemPath>EMenuInGame.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="NPC" projectFiles="true">
+        <itemPath>BossFinal.h</itemPath>
+        <itemPath>Enemigo.h</itemPath>
+        <itemPath>Proyectil.h</itemPath>
+        <itemPath>Simpatizante.h</itemPath>
+      </logicalFolder>
+      <itemPath>Camara.h</itemPath>
+      <itemPath>Escena.h</itemPath>
+      <itemPath>Juego.h</itemPath>
+      <itemPath>Jugador.h</itemPath>
+      <itemPath>LevelFactory.h</itemPath>
+      <itemPath>Mapa.h</itemPath>
+      <itemPath>Mundo.h</itemPath>
+      <itemPath>NPC.h</itemPath>
+      <itemPath>Plataforma.h</itemPath>
+      <itemPath>tinystr.h</itemPath>
+      <itemPath>tinyxml.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="f1" displayName="Estados" projectFiles="true">
+        <itemPath>ECargando.cpp</itemPath>
+        <itemPath>ECinematica.cpp</itemPath>
+        <itemPath>EInGame.cpp</itemPath>
+        <itemPath>EIntro.cpp</itemPath>
+        <itemPath>EMenu.cpp</itemPath>
+        <itemPath>EMenuInGame.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="NPC" projectFiles="true">
+        <itemPath>BossFinal.cpp</itemPath>
+        <itemPath>Enemigo.cpp</itemPath>
+        <itemPath>Proyectil.cpp</itemPath>
+        <itemPath>Simpatizante.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>Camara.cpp</itemPath>
+      <itemPath>Escena.cpp</itemPath>
+      <itemPath>Juego.cpp</itemPath>
+      <itemPath>Jugador.cpp</itemPath>
+      <itemPath>LevelFactory.cpp</itemPath>
+      <itemPath>Mapa.cpp</itemPath>
+      <itemPath>Mundo.cpp</itemPath>
+      <itemPath>NPC.cpp</itemPath>
+      <itemPath>Plataforma.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+      <itemPath>pruebasAlfonso.cpp</itemPath>
+      <itemPath>pruebasCarlos.cpp</itemPath>
+      <itemPath>tinystr.cpp</itemPath>
+      <itemPath>tinyxml.cpp</itemPath>
+      <itemPath>tinyxmlerror.cpp</itemPath>
+      <itemPath>tinyxmlparser.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>C:/Users/chiri/Desktop</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>C:/SFML/include</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>C:/SFML/lib/libsfml-graphics-d.a</linkerLibFileItem>
+            <linkerLibFileItem>C:/SFML/lib/libsfml-window-d.a</linkerLibFileItem>
+            <linkerLibFileItem>C:/SFML/lib/libsfml-system-d.a</linkerLibFileItem>
+            <linkerLibFileItem>C:/SFML/lib/libsfml-audio-d.a</linkerLibFileItem>
+            <linkerLibFileItem>C:/SFML/lib/libsfml-main-d.a</linkerLibFileItem>
+            <linkerLibFileItem>C:/SFML/lib/libsfml-network-d.a</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="BossFinal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BossFinal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Camara.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Camara.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ECargando.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ECargando.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ECinematica.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ECinematica.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EInGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EInGame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EIntro.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EIntro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EMenu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EMenu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EMenuInGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EMenuInGame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Enemigo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Enemigo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Escena.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Escena.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Juego.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Jugador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Jugador.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LevelFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LevelFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mapa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mapa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mundo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mundo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NPC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NPC.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Plataforma.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Plataforma.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Proyectil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Proyectil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Simpatizante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Simpatizante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pruebasCarlos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="BossFinal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BossFinal.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Camara.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Camara.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ECargando.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ECargando.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="ECinematica.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ECinematica.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EInGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EInGame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EIntro.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EIntro.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EMenu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EMenu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EMenuInGame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EMenuInGame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Enemigo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Enemigo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Escena.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Escena.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Juego.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Juego.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Jugador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Jugador.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="LevelFactory.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="LevelFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mapa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mapa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Mundo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Mundo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="NPC.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="NPC.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Plataforma.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Plataforma.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Proyectil.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Proyectil.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Simpatizante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Simpatizante.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pruebasAlfonso.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="pruebasCarlos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

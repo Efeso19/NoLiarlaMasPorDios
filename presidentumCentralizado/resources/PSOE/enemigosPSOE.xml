@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="enemigosPSOE.png" width="256" height="512">
+    <sprite n="NPC - PROYECTIL.png" x="0" y="0" w="30" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (01) copia.png" x="30" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (02) copia.png" x="70" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (03) copia.png" x="110" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (04) copia.png" x="150" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (05) copia.png" x="190" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (06) copia.png" x="0" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (07) copia.png" x="40" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (08) copia.png" x="80" y="110" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (09) copia.png" x="160" y="110" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (10) copia.png" x="0" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (11) copia.png" x="40" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (12) copia.png" x="80" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (13) copia.png" x="120" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (14) copia.png" x="160" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (15) copia.png" x="200" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (16) copia.png" x="0" y="330" w="44" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (17) copia.png" x="44" y="330" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC - PSOE (18) copia.png" x="124" y="330" w="80" h="110" pX="0.5" pY="0.5"/>
+</TextureAtlas>

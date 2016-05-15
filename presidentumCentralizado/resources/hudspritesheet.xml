@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="hudspritesheet.png" width="1024" height="1024">
+    <sprite n="07barravida.png" x="0" y="0" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="05barravida.png" x="232" y="0" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="03barravida.png" x="464" y="0" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="04barravida.png" x="696" y="0" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="06barravida.png" x="0" y="12" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="02barravida.png" x="232" y="12" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="10barravida.png" x="464" y="12" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="08barravida.png" x="696" y="12" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="00barravida.png" x="0" y="24" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="01barravida.png" x="232" y="24" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="09barravida.png" x="464" y="24" w="232" h="12" pX="0.5" pY="0.5"/>
+    <sprite n="Vidas0.png" x="696" y="24" w="80" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="Vidas1.png" x="776" y="24" w="80" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="Vidas2.png" x="856" y="24" w="80" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="Vidas3.png" x="936" y="24" w="80" h="55" pX="0.5" pY="0.5"/>
+    <sprite n="reloj.png" x="0" y="79" w="60" h="60" pX="0.5" pY="0.5"/>
+    <sprite n="voto.png" x="60" y="79" w="50" h="69" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA ALBERT.png" x="110" y="79" w="350" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA MARIANO.png" x="460" y="79" w="350" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA PABLO.png" x="0" y="229" w="350" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA PEDRO.png" x="350" y="229" w="350" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="09barraVidaminiatura.png" x="700" y="229" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="05barraVidaminiatura.png" x="820" y="229" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="06barraVidaminiatura.png" x="0" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="04barraVidaminiatura.png" x="120" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="02barraVidaminiatura.png" x="240" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="01barraVidaminiatura.png" x="360" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="03barraVidaminiatura.png" x="480" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="10barraVidaminiatura.png" x="600" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="07barraVidaminiatura.png" x="720" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="00barraVidaminiatura.png" x="840" y="379" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="08barraVidaminiatura.png" x="0" y="529" w="120" h="150" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA ALBERTMINIATURA.png" x="120" y="529" w="150" h="170" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA PEDROMINIATURA.png" x="270" y="529" w="150" h="170" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA MARIANOMINIATURA.png" x="420" y="529" w="150" h="170" pX="0.5" pY="0.5"/>
+    <sprite n="VIDA PABLOMINIATURA.png" x="570" y="529" w="150" h="170" pX="0.5" pY="0.5"/>
+</TextureAtlas>

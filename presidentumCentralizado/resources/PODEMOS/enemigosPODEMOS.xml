@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="EnemigosPODEMOS.png" width="256" height="512">
+    <sprite n="NPC - PROYECTIL.png" x="0" y="0" w="30" h="24" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (01).png" x="30" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (02).png" x="70" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (03).png" x="110" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (04).png" x="150" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (05).png" x="190" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (06).png" x="0" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (07).png" x="40" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (08).png" x="80" y="110" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (09).png" x="160" y="110" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (10).png" x="0" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (11).png" x="40" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (12).png" x="80" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (13).png" x="120" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (14).png" x="160" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (15).png" x="200" y="220" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (16).png" x="0" y="330" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (17).png" x="40" y="330" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="NPC- PODEMOS (18).png" x="120" y="330" w="80" h="110" pX="0.5" pY="0.5"/>
+</TextureAtlas>

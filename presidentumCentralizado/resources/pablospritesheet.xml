@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="pablospritesheet.png" width="280" height="220">
+    <sprite n="pabloIglesias.png" x="0" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasAttDer.png" x="40" y="0" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasAttIzq.png" x="120" y="0" w="80" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasDer.png" x="200" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasDer1.png" x="240" y="0" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasDer2.png" x="0" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasIzq.png" x="40" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasIzq1.png" x="80" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasIzq2.png" x="120" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasSaltoDer.png" x="160" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+    <sprite n="pabloIglesiasSaltoIzq.png" x="200" y="110" w="40" h="110" pX="0.5" pY="0.5"/>
+</TextureAtlas>
