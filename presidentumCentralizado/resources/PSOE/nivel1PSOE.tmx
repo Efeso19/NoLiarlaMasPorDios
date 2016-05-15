@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="158" height="19" tilewidth="32" tileheight="32" nextobjectid="163">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="158" height="19" tilewidth="32" tileheight="32" nextobjectid="164">
  <tileset firstgid="1" name="nivelC'Sv1" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="nivelPSOEv1.png" width="256" height="256"/>
   <tile id="0">
@@ -9171,6 +9171,8 @@
  </objectgroup>
  <objectgroup name="aprendeAtacar">
   <object id="161" x="543" y="219"/>
-  <object id="162" x="774" y="136"/>
+ </objectgroup>
+ <objectgroup name="aprendeVotar">
+  <object id="163" x="774" y="136"/>
  </objectgroup>
 </map>
