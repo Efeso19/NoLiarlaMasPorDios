@@ -102,7 +102,7 @@ void ECargando::Init(){
     
 //    marcoCarga->setFillColor(sf::Color(255,255,255,255));
 //    marcoCarga->setOutlineColor(sf::Color::Black);
-//    marcoCarga->setOutlineThickness(3);
+//    marcoCarga->setOutlineThickness(3/);
 //    marcoCarga->setSize(sf::Vector2f(400, 80));
 //
 //    marcoCarga->setOrigin(marcoCarga->getSize().x/2,marcoCarga->getSize().y/2);
