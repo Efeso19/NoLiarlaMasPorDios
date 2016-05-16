@@ -41,7 +41,8 @@ public:
     void comprobarCelda();
     void resetearJugador();
    
-    
+    bool invencible;
+    bool peleaBoss;
     bool salto;
     int alturaSuelo;
     sf::Vector2f posicionAnterior;

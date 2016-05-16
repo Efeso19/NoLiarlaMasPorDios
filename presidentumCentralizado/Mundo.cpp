@@ -263,11 +263,9 @@ bool Mundo::crearMundo(int l){
     musica->setBuffer(*buffer);
     musica->setLoop(true);
     //musica->play(); 
-    aux= true;//no tocar
     
-
+    resetSeq = false;
     mundoCreado = true;
-    
     //EInGame::Instance(Juego::Instance())->eliminandoMundo = false;
     return true;
 
@@ -374,7 +372,7 @@ void Mundo::Update(){
 }
 
 void Mundo::Render(){
-    bool aux2 = false;
+    
     
         mapa->dibuja();
       
@@ -390,10 +388,62 @@ void Mundo::Render(){
             mapa->dibujaAyuda2();
             mapa->dibujaAyuda3();
             mapa->dibujaAyuda4();
+            
+            if(Jugador::Instance()->getSprite().getPosition().x>mapa->posxBoss-300){
+                Jugador::Instance()->peleaBoss=true;
+            }
+            
+            if(Jugador::Instance()->peleaBoss==true){
+                mapa->dibujaMuro(nivel);
+                if(Jugador::Instance()->getSprite().getGlobalBounds().intersects(mapa->spriteMuro->getGlobalBounds())){
+                        Jugador::Instance()->posicionJugador.x=Jugador::Instance()->posicionJugador.x+5;
+                }
+                camara->desplazamientoCamara=0;
+            }       
+            
+              if(Jugador::Instance()->vidas==0){
+                Jugador::Instance()->peleaBoss=false;
+            }
+            
+            
         }
         
         if(faseActual == 2){
             mapa->dibujaAyuda5();
+            
+            if(Jugador::Instance()->getSprite().getPosition().x>mapa->posxBoss-300){
+                Jugador::Instance()->peleaBoss=true;
+            }
+            
+            if(Jugador::Instance()->peleaBoss==true){
+                camara->desplazamientoCamara=0;
+            }    
+            
+             if(Jugador::Instance()->vidas==0){
+                Jugador::Instance()->peleaBoss=false;
+            }
+
+        }
+        
+        if(faseActual == 3){
+            
+            if(Jugador::Instance()->getSprite().getPosition().x>mapa->posxBoss-300){
+                Jugador::Instance()->peleaBoss=true;
+            }
+            
+            if(Jugador::Instance()->peleaBoss==true){
+                mapa->dibujaMuro(nivel);
+                if(Jugador::Instance()->getSprite().getGlobalBounds().intersects(mapa->spriteMuro->getGlobalBounds())){
+                        Jugador::Instance()->posicionJugador.x=Jugador::Instance()->posicionJugador.x+5;
+                }
+                camara->desplazamientoCamara=0;
+            }       
+            
+              if(Jugador::Instance()->vidas==0){
+                Jugador::Instance()->peleaBoss=false;
+            }
+            
+            
         }
         //dibujo los dos vectores de los enemigos
         for(int i=0; i<enemigosCuerpo->size(); i++){
@@ -748,28 +798,44 @@ void Mundo::Render(){
             
             //switch(Juego::Instance()->event.type){     
                 //Si se recibe el evento de cerrar la ventana la cierro
-        if(Jugador::Instance()->estadoDelPacto == 2 || Jugador::Instance()->estadoDelPacto == 3){
+        //if(Jugador::Instance()->estadoDelPacto == 2 || Jugador::Instance()->estadoDelPacto == 3){
             
         
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::X)){
-                if(faseActual == 3){
-                    if(aux){
-                        sumarValoresTotales();
-                        aux=false;
-                        aux2 = true; 
-                    }
-                    
-                }else{
-                    EInGame::Instance(Juego::Instance())->eliminarMundo();
-                    musica->stop();
-                }
+
+               EInGame::Instance(Juego::Instance())->eliminarMundo();
+               musica->stop();
+
 
             }
-        }
+        //}
         ///}
         
-        if(aux2){
-            camara->cartelPresidente();
+        /****************TRUCOS!!!!!************/
+        
+        /*TRUCO +tiempo!*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
+            Mundo::Instance()->camara->countdown=camara->countdown+50; //aumenta mas de 50, pero da igual
+        }
+        
+        /*TRUCO +vida!*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::V)){
+            Jugador::Instance()->vidas=10; //Se cura la vida entera
+        }
+        
+        /*TRUCO +corazon!*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::C)){
+            Jugador::Instance()->vidasPrincipales=3; //Se cura todos los corazones
+        }
+        
+        /*TRUCO invencible a caidas*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::I)){
+            Jugador::Instance()->invencible=true;
+            Jugador::Instance()->velocidadSalto=20; //Para salir de las caidas
+        }
+         if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){ //DESACTIVA TRUCO ANTERIOR
+            Jugador::Instance()->invencible=false;  
+            Jugador::Instance()->velocidadSalto=12;
         }
         
 }
@@ -867,19 +933,10 @@ Mundo::~Mundo() {
 void Mundo::sumarValoresTotales(){
     
     std::cout<<"estoy en la fase: "<<faseActual<<std::endl;
-        tiempoEmpleado += (camara->tiempoInicio-camara->lastTime);
-    std::cout<<"tiempo total:"<<tiempoEmpleado<<std::endl;
-    incrementoTiempo = camara->votosConseguidos + (Jugador::Instance()->enemigosEliminados*2) + camara->lastTime;
-            
     
-        
     if(Jugador::Instance()->carcelAbierta){
         numSimpatizantesLiberados++;
-        incrementoTiempo +=15;
     }
-    
-    std::cout<<"El incremento del timepo es: "<<camara->votosConseguidos<<"+("<<Jugador::Instance()->enemigosEliminados*2<<")+"<<camara->lastTime<<"+15="<<incrementoTiempo<<std::endl;
-    
     if(Jugador::Instance()->estadoDelPacto == 2){
         numPactosRealizados ++;
         if(secundario2 == 0 && secundario1 != 0){

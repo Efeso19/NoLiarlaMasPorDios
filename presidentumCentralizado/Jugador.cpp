@@ -64,7 +64,8 @@ void Jugador::iniciarJugador(float x, float y, int politic, int politic2, int po
     vidasMiniaturas1=10;
     vidasMiniaturas2=10;
     ultimo=1;
-    
+    peleaBoss=false; //indica si esta peleando o no contra el boss
+    invencible=false; //indica si es invencible o no, pero solo a las caidas por precipicios
     matriz=new int*[99];
     for(int i=0; i<99;i++){
         matriz[i]=new int[4];
@@ -476,7 +477,7 @@ void Jugador::handle(){
 
 
         for(j=0; j<Mundo::Instance()->mapa->arrayMuerte.size(); j++){
-            if(this->getSprite().getGlobalBounds().intersects(Mundo::Instance()->mapa->arrayMuerte[j]->getGlobalBounds())){
+            if(this->getSprite().getGlobalBounds().intersects(Mundo::Instance()->mapa->arrayMuerte[j]->getGlobalBounds()) && invencible==false){
     //            if(this->getSprite().getPosition().x<mapa->arrayMuerte[j]->getPosition().x){
     //                choque=0;
     //            }else if(this->getSprite().getPosition().x>mapa->arrayMuerte[j]->getPosition().x){

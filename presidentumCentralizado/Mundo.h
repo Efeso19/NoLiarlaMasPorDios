@@ -112,12 +112,11 @@ public:
     int secundario1 = 0;
     int secundario2 = 0;
     
-    int incrementoTiempo=0;
     bool resetSeq;
     
 private:
 
-    bool aux;
+
        static Mundo* pinstance;
     
 };
