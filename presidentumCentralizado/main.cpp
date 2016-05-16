@@ -1,3 +1,9 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 #include <iostream>
 #include <vector>
 #include <string> 
@@ -9,15 +15,28 @@
 #include <fstream>
 #include <cstring>
 
+#include "Juego.h"
+#include "Escena.h"
+
+#include "EIntro.h"
+#include "EMenu.h"
+#include "EMenuInGame.h"
+#include "ECinematica.h"
+#include "EInGame.h"
+
+#include "Enemigo.h"
+#include "NPC.h"
+#include "Mundo.h"
 
 
-#include "pruebasCarlos.cpp"
 
-int main(){                   //COMENTAR UNA DE LAS DOS LLAMADAS PARA NO LIARLA!!
+
+int main(){                   
     
    //alfonso();
    
-   carlos();
+   Juego::Instance();
+   Juego::Instance()->Init();
         
     
 

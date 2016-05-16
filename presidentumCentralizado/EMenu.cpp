@@ -592,11 +592,13 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                             valordelonido=valordelonido/2;
                             po<<valordelonido;
                             valorsonido->setString(po.str());
-                            Mundo::Instance()->soundHurt->setVolume(valordelonido);
-                            Mundo::Instance()->soundSobre->setVolume(valordelonido);
-                            Jugador::Instance()->soundAtaque.setVolume(valordelonido);
-                            Jugador::Instance()->soundSalto.setVolume(valordelonido);
-                            Jugador::Instance()->soundHurt.setVolume(valordelonido);
+                            if(Mundo::Instance()->mundoCreado){
+                                Mundo::Instance()->soundHurt->setVolume(valordelonido);
+                                Mundo::Instance()->soundSobre->setVolume(valordelonido);
+                                Jugador::Instance()->soundAtaque.setVolume(valordelonido);
+                                Jugador::Instance()->soundSalto.setVolume(valordelonido);
+                                Jugador::Instance()->soundHurt.setVolume(valordelonido);
+                            }
                             
                             
                         }
@@ -608,7 +610,8 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                             valordelonido=valordelonido/2;
                             po<<valordelonido;
                             valormusica->setString(po.str());
-                            Mundo::Instance()->musica->setVolume(valordelonido);
+                            if(Mundo::Instance()->mundoCreado)
+                                Mundo::Instance()->musica->setVolume(valordelonido);
                         }
                     }
                 break;
@@ -650,11 +653,13 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                             valordelonido=valordelonido/2;
                             po<<valordelonido;
                             valorsonido->setString(po.str());
-                            Mundo::Instance()->soundHurt->setVolume(valordelonido);
-                            Mundo::Instance()->soundSobre->setVolume(valordelonido);
-                            Jugador::Instance()->soundAtaque.setVolume(valordelonido);
-                            Jugador::Instance()->soundSalto.setVolume(valordelonido);
-                            Jugador::Instance()->soundHurt.setVolume(valordelonido);
+                            if(Mundo::Instance()->mundoCreado){
+                                Mundo::Instance()->soundHurt->setVolume(valordelonido);
+                                Mundo::Instance()->soundSobre->setVolume(valordelonido);
+                                Jugador::Instance()->soundAtaque.setVolume(valordelonido);
+                                Jugador::Instance()->soundSalto.setVolume(valordelonido);
+                                Jugador::Instance()->soundHurt.setVolume(valordelonido);
+                            }
                             
                         }
                         if(GetPressedItemOpciones()==1 && tiradormusica->getPosition().x>=525){
@@ -663,8 +668,9 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                             std::stringstream po;
                             valordelonido=valordelonido/2;
                             po<<valordelonido;
-                            valormusica->setString(po.str());                
-                            Mundo::Instance()->musica->setVolume(valordelonido);
+                            valormusica->setString(po.str());             
+                            if(Mundo::Instance()->mundoCreado)
+                                 Mundo::Instance()->musica->setVolume(valordelonido);
                             
                         }
                     }
