@@ -21,6 +21,7 @@
 #include "Jugador.h"
 #include "Escena.h"
 #include "ECargando.h"
+#include "EMenu.h"
 #include <string> 
 #include <cstring>
 
@@ -104,7 +105,14 @@ void EInGame::eliminarMundo(){
     Mundo::Instance()->faseActual++;
     Mundo::Instance()->eliminarMundo();
     Mundo::Instance()->mundoCreado = false;
-    ECargando::Instance(Juego::Instance())->Handle();
+    if(!Mundo::Instance()->gameover){
+        ECargando::Instance(Juego::Instance())->Handle();
+    }
+    else{
+        Mundo::Instance()->gameover = false;
+        EMenu::Instance(Juego::Instance())->reinicio();
+        EMenu::Instance(Juego::Instance())->Handle();
+    }
     
 }
 

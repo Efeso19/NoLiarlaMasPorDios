@@ -589,7 +589,7 @@ void Jugador::handle(){
 
         else if(vidasPrincipales==0 && vidasMiniaturas1==0 && vidasMiniaturas2==0){
             muerto=true;
-            cout<<"HA MUEEEEERTO!!!"<<endl;
+            //cout<<"HA MUEEEEERTO!!!"<<endl;
         }
 
         if((vidasPrincipales>=0 || vidasPrincipales!=0) && vidasMiniaturas1>0 && vidasMiniaturas2>=0){

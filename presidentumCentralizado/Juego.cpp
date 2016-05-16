@@ -41,7 +41,7 @@ Juego::Juego(){
 
 void Juego::Init(){
     //VideoMode mode, const String& title, Uint32 style = Style::Default, const ContextSettings& settings = ContextSettings(
-    window = new sf::RenderWindow(sf::VideoMode(this->windowWidth, this->windowHeight), "Ventana de juego");
+    window = new sf::RenderWindow(sf::VideoMode(this->windowWidth, this->windowHeight), "Ventana de juego", sf::Style::Titlebar | sf::Style::Close);
     window->setFramerateLimit(60);
     sf::Clock reloj;
     

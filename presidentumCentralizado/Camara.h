@@ -62,6 +62,9 @@ public:
     sf::Text hudVotosValue; //Numero de votos
     int tiempoInicio;
     int votosConseguidos;
+    
+    sf::View *camara;
+    
 private:
     
     int ancho;
@@ -71,7 +74,7 @@ private:
     int kVel;
     //sf::Time time; //PRUEBA INTERPOLACION
     
-    sf::View *camara;
+    
     
     sf::Font font;  
     sf::Font fontpixelated;

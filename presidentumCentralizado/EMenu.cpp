@@ -93,7 +93,7 @@ EMenu::EMenu(Juego* context){ //CONSTRUCTOR REAL
     
     menuInGame[1]->setString("Guardar Partida");
     menuInGame[1]->setPosition(sf::Vector2f(width*0.42, 200));
-    
+
     menuInGame[2]->setString("Controles");
     menuInGame[2]->setPosition(sf::Vector2f(width*0.45, 275));
     
@@ -756,6 +756,7 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                                 //estamos en controles
                                 enControles=true;
                                 selectedItemIndexInPausa=0;
+                                
                                 int i=0;
                                 //reseteamos los colores del menu
                                 for(i=0; i<menuInGame.size(); i++){
@@ -813,11 +814,11 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                                 //sobreescribirmos
                                 sobreescrito=true;
                             }
-                            if(GetPressedItemGuardar()==0){
-                                //hemos presionado que queremos guardar
-                                guardando=true;
-                            } 
-                            
+//                            if(GetPressedItemGuardar()==0){
+//                                //hemos presionado que queremos guardar
+//                                guardando=true;
+//                            } 
+//                            
                         }
                     }
                     if(enOpciones){
@@ -920,6 +921,8 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                                     std::cout<<"Ya no estoy en pausa"<<std::endl;
                                     EInGame::Instance(Juego::Instance())->Handle();
                                     pauseLimiter.restart();
+                                    enControles = false;
+                                    
                                     break;
                                     
                                     
@@ -955,6 +958,7 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                             enControles=false;
                             opcionMenuppal=6;
                             
+                            
                         }
                     }
                     if(enOpciones && !pausaopciones){
@@ -962,6 +966,7 @@ void EMenu::teclas(sf::RenderWindow& window, sf::Event event){
                         opcionMenuppal=6;
                         mostrarMenuppal=true;
                         selectedItemIndexOpciones=0;
+                        enControles = false;
                     }
                     if(enCreditos){
                         enCreditos=false;
@@ -1168,6 +1173,8 @@ void EMenu::seleccionPersonaje(){
 void EMenu::reinicio(){
  
     //reiniciamos las variables booleanas
+   
+    mostrarMenuppal = true;
     enPartida = false;
     enCargar = false;
     enOpciones = false;
@@ -1179,6 +1186,9 @@ void EMenu::reinicio(){
     enSonido=false;
     enMusica=false;
     pausaopciones=false;
+    seleccion = false;
+    salida = false;
+    Mundo::Instance()->gameover = false;
 }
 
 EMenu::~EMenu(){

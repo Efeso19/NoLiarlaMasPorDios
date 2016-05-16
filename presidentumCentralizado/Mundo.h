@@ -112,6 +112,8 @@ public:
     
     int incrementoTiempo=0;
     
+    bool gameover;
+    
 private:
 
     bool aux;

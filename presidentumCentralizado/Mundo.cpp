@@ -18,6 +18,7 @@
 #include "Camara.h"
 #include "LevelFactory.h"
 #include "EInGame.h"
+#include "EMenu.h"
 
 #define UPDATE_TICK_TIME 1000/15
 
@@ -263,7 +264,6 @@ bool Mundo::crearMundo(int l){
     aux= true;//no tocar
     
     mundoCreado = true;
-    
     //EInGame::Instance(Juego::Instance())->eliminandoMundo = false;
     return true;
 
@@ -271,9 +271,9 @@ bool Mundo::crearMundo(int l){
 
 void Mundo::Update(){
     
-  
     
-    
+
+
     
     if(!Jugador::Instance()->muerto)     //CONTORLA QUE EL HANDLE SE BLOQUEE
             Jugador::Instance()->handle();
@@ -799,7 +799,7 @@ void Mundo::Render(){
         if(Jugador::Instance()->estadoDelPacto == 2 || Jugador::Instance()->estadoDelPacto == 3){
             
         
-            if(sf::Keyboard::isKeyPressed(sf::Keyboard::X)){
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return)){
                 if(faseActual == 3){
                     if(aux){
                         sumarValoresTotales();
@@ -813,6 +813,10 @@ void Mundo::Render(){
                 }
 
             }
+            
+            
+
+            
         }
         ///}
         
@@ -847,6 +851,14 @@ void Mundo::Render(){
             Jugador::Instance()->invencible=false;  
             Jugador::Instance()->velocidadSalto=12;
         }
+        
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Return) && gameover){
+
+            
+            //faseActual = -1;
+            EInGame::Instance(Juego::Instance())->eliminarMundo();
+          
+    }
         
 }
 
