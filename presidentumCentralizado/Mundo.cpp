@@ -269,6 +269,7 @@ bool Mundo::crearMundo(int l){
     mundoCreado = true;
     
     //EInGame::Instance(Juego::Instance())->eliminandoMundo = false;
+    
     return true;
 
 }
