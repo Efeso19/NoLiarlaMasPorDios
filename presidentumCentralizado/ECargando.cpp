@@ -87,7 +87,7 @@ void ECargando::Init(){
     cartel->setOutlineThickness(2);
     
     
- 
+ //
     tituloText->setPosition(cartel->getOrigin().x+40,cartel->getOrigin().y-140);
     tituloText->setPosition((float)bgCartel->getSize().x/2-130,(float)bgCartel->getSize().y/2-230);
     tituloText->setCharacterSize(70);
