@@ -214,9 +214,9 @@ EMenu::EMenu(Juego* context){ //CONSTRUCTOR REAL
     
     //metodo controles
     
-    izquierda = new sf::Text("Moverse a la izquierda: Left/A", fuente);
-    derecha = new sf::Text("Moverse a la derecha: Right/D", fuente);
-    saltar = new sf::Text("Saltar: Up/W", fuente);
+    izquierda = new sf::Text("Moverse a la izquierda: Left", fuente);
+    derecha = new sf::Text("Moverse a la derecha: Right", fuente);
+    saltar = new sf::Text("Saltar: Up", fuente);
     golpear = new sf::Text("Golpear o disparar: Barra espaciadora", fuente);
     personaje1 = new sf::Text("Intercambiar personaje por el personaje principal: 1", fuente);
     personaje2 = new sf::Text("Intercambiar personaje por el primero en reserva: 2", fuente);
