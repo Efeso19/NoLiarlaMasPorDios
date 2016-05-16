@@ -43,6 +43,8 @@ public:
    
     
     bool salto;
+    bool invencible;
+    bool peleaBoss;
     int alturaSuelo;
     sf::Vector2f posicionAnterior;
     sf::Vector2f posicionJugador;

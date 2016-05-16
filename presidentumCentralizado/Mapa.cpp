@@ -912,6 +912,40 @@ void Mapa::leerMapa(int numMapa){
                 }
              ayuda5 = ayuda5->NextSiblingElement("objectgroup");
          }
+            
+                        TiXmlElement *muro = map->FirstChildElement("objectgroup");
+        while(muro){
+            
+            nombre=(string) muro->Attribute("name");
+           
+            if(nombre=="Muro"){
+                    cout<<"nombre: "<<nombre<<endl;
+                    TiXmlElement *object = muro->FirstChildElement("object");
+                    while(object){
+                        xString = (string) object->Attribute("x");
+                        yString = (string) object->Attribute("y");
+                        
+                        x=atoi(xString.c_str());
+                        y=atoi(yString.c_str());
+                        
+                        muroX=x;
+                        muroY=y;
+                        
+                         texMuro = new sf::Texture();
+                         if (!texMuro->loadFromFile("resources/PSOE/MUROPSOE.png")) {
+                                std::cerr << "Error cargando la imagen voto.png";
+                                exit(0);
+                        }
+                        
+                        spriteMuro = new sf::Sprite(*texMuro); 
+                        spriteMuro->setPosition(x, y);
+                        
+                        object = object->NextSiblingElement("object");
+                        filas++;
+                    }
+                }
+             muro = muro->NextSiblingElement("objectgroup");
+         }
 //     TiXmlElement *properties = colisiones->FirstChildElement("properties");
 //     string atributo;
 //     while(properties){
@@ -1253,6 +1287,40 @@ void Mapa::dibujaAyuda4(){
 
 void Mapa::dibujaAyuda5(){
     Juego::Instance()->window->draw(*spriteAyuda5);
+}
+
+void Mapa::dibujaMuro(int nivel){
+
+    if(nivel==1 || nivel==5 || nivel==9){ //MURO PP
+        if (!texMuro->loadFromFile("resources/PP/MUROPP.png")) {
+                std::cerr << "Error cargando la imagen del muro";
+                exit(0);
+        }
+    }
+    
+    if(nivel==2 || nivel==6 || nivel==10){ //MURO PSOE
+         if (!texMuro->loadFromFile("resources/PSOE/MUROPSOE.png")) {
+                std::cerr << "Error cargando la imagen del muro";
+                exit(0);
+        }
+    } 
+    if(nivel==3 || nivel==7 || nivel==11){ //MURO CS
+        if (!texMuro->loadFromFile("resources/CIUDADANOS/MUROCIUDADANOS.png")) {
+                std::cerr << "Error cargando la imagen del muro";
+                exit(0);
+        }
+    } 
+    if(nivel==4 || nivel==8 || nivel==12){ //MURO PODEMOS
+        if (!texMuro->loadFromFile("resources/PODEMOS/MUROPODEMOS.png")) {
+                std::cerr << "Error cargando la imagen del muro";
+                exit(0);
+        }
+
+    }
+    
+    spriteMuro = new sf::Sprite(*texMuro); 
+    spriteMuro->setPosition(muroX, muroY);
+    Juego::Instance()->window->draw(*spriteMuro);
 }
 
 void Mapa::dibujaEnemigosC(){

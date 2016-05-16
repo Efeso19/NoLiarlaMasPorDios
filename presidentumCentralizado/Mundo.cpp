@@ -381,15 +381,67 @@ void Mundo::Render(){
         
         mapa->dibujaVotos();
         
-        if(faseActual == 1){
+         if(faseActual == 1){
             mapa->dibujaAyuda1();
             mapa->dibujaAyuda2();
             mapa->dibujaAyuda3();
             mapa->dibujaAyuda4();
+            
+            if(Jugador::Instance()->getSprite().getPosition().x>mapa->posxBoss-300){
+                Jugador::Instance()->peleaBoss=true;
+            }
+            
+            if(Jugador::Instance()->peleaBoss==true){
+                mapa->dibujaMuro(nivel);
+                if(Jugador::Instance()->getSprite().getGlobalBounds().intersects(mapa->spriteMuro->getGlobalBounds())){
+                        Jugador::Instance()->posicionJugador.x=Jugador::Instance()->posicionJugador.x+5;
+                }
+                camara->desplazamientoCamara=0;
+            }       
+            
+              if(Jugador::Instance()->vidas==0){
+                Jugador::Instance()->peleaBoss=false;
+            }
+            
+            
         }
         
         if(faseActual == 2){
             mapa->dibujaAyuda5();
+            
+            if(Jugador::Instance()->getSprite().getPosition().x>mapa->posxBoss-300){
+                Jugador::Instance()->peleaBoss=true;
+            }
+            
+            if(Jugador::Instance()->peleaBoss==true){
+                camara->desplazamientoCamara=0;
+            }    
+            
+             if(Jugador::Instance()->vidas==0){
+                Jugador::Instance()->peleaBoss=false;
+            }
+
+        }
+        
+        if(faseActual == 3){
+            
+            if(Jugador::Instance()->getSprite().getPosition().x>mapa->posxBoss-300){
+                Jugador::Instance()->peleaBoss=true;
+            }
+            
+            if(Jugador::Instance()->peleaBoss==true){
+                mapa->dibujaMuro(nivel);
+                if(Jugador::Instance()->getSprite().getGlobalBounds().intersects(mapa->spriteMuro->getGlobalBounds())){
+                        Jugador::Instance()->posicionJugador.x=Jugador::Instance()->posicionJugador.x+5;
+                }
+                camara->desplazamientoCamara=0;
+            }       
+            
+              if(Jugador::Instance()->vidas==0){
+                Jugador::Instance()->peleaBoss=false;
+            }
+            
+            
         }
         //dibujo los dos vectores de los enemigos
         for(int i=0; i<enemigosCuerpo->size(); i++){
@@ -766,6 +818,34 @@ void Mundo::Render(){
         
         if(aux2){
             camara->cartelPresidente();
+        }
+        
+        
+        /****************TRUCOS!!!!!************/
+        
+        /*TRUCO +tiempo!*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z)){
+            Mundo::Instance()->camara->countdown=camara->countdown+50; //aumenta mas de 50, pero da igual
+        }
+        
+        /*TRUCO +vida!*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::V)){
+            Jugador::Instance()->vidas=10; //Se cura la vida entera
+        }
+        
+        /*TRUCO +corazon!*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::C)){
+            Jugador::Instance()->vidasPrincipales=3; //Se cura todos los corazones
+        }
+        
+        /*TRUCO invencible a caidas*/
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::I)){
+            Jugador::Instance()->invencible=true;
+            Jugador::Instance()->velocidadSalto=20; //Para salir de las caidas
+        }
+         if(sf::Keyboard::isKeyPressed(sf::Keyboard::O)){ //DESACTIVA TRUCO ANTERIOR
+            Jugador::Instance()->invencible=false;  
+            Jugador::Instance()->velocidadSalto=12;
         }
         
 }

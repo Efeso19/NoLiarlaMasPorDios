@@ -44,6 +44,7 @@ public:
     void dibujaAyuda4();
     void dibujaAyuda5();
 
+    void dibujaMuro(int nivel);
     //FONDO///////////////
     int cuantasVecesDeboPintarElFondo;
     sf::Texture tex;
@@ -77,8 +78,11 @@ public:
     sf::Sprite *spriteAyuda3;
     sf::Sprite *spriteAyuda4;
     sf::Sprite *spriteAyuda5;
+    sf::Sprite *spriteMuro;
     int simpaX;
     int simpaY;
+    int muroX;
+    int muroY;
 private:
     
     int ***_tilemap;
@@ -96,6 +100,7 @@ private:
     sf::Texture m_tileset;
     sf::Texture fond;
     sf::Texture texVoto;
+    sf::Texture* texMuro;
     sf::Texture texDialogoPacto;
     sf::Texture *texSimpa;
     sf::Texture texBocadilloAbierta;
@@ -105,6 +110,7 @@ private:
     sf::Texture* texAyuda3;
     sf::Texture* texAyuda4;
     sf::Texture* texAyuda5;
+     
     
     sf::Texture texCarcelCerrada;
     sf::Texture texCarcelAbierta;
