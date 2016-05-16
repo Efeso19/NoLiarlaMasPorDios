@@ -101,7 +101,7 @@ void ECargando::Init(){
     cuerpoText->setColor(sf::Color::Black);
     
 //    marcoCarga->setFillColor(sf::Color(255,255,255,255));
-//    marcoCarga->setOutlineColor(sf::Color::Black);
+//    marcoCarga->setOut/lineColor(sf::Color::Black);
 //    marcoCarga->setOutlineThickness(3);
 //    marcoCarga->setSize(sf::Vector2f(400, 80));
 //
