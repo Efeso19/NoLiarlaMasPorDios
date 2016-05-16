@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="270" height="19" tilewidth="32" tileheight="32" nextobjectid="811">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="270" height="19" tilewidth="32" tileheight="32" nextobjectid="812">
  <tileset firstgid="1" name="nivelC'Sv1" tilewidth="32" tileheight="32" tilecount="64" columns="8">
   <image source="nivelPSOEv1.png" width="256" height="256"/>
   <tile id="0">
@@ -15706,5 +15706,8 @@
  </objectgroup>
  <objectgroup name="DialogoPacto">
   <object id="810" x="8174" y="15"/>
+ </objectgroup>
+ <objectgroup name="Muro">
+  <object id="811" x="7551.67" y="-126.667" width="33.3333" height="320"/>
  </objectgroup>
 </map>
